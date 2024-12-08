@@ -1,0 +1,1380 @@
+import {HorizontalBox, VerticalBox} from "std-widgets.slint";
+export component MainWindow inherits Window {
+    in-out property<bool> accept-visible <=> accept.visible;
+    in-out property<bool> card-visible <=> card.visible;
+    in-out property<bool> cash-visible <=> cash.visible;
+    in-out property<string> digit1-text <=> digit1.text;
+    in-out property<string> digit10-text <=> digit10.text;
+    in-out property<bool> english-visible <=> english.visible;
+    in-out property<bool> footer-visible <=> footer.visible;
+    in-out property<bool> good-bye-visible <=> good-bye.visible;
+    in-out property<bool> header-visible <=> header.visible;
+    in-out property<bool> home-visible <=> home.visible;
+    in-out property<bool> ic-visible <=> ic.visible;
+    in-out property<bool> key-0-visible <=> key-0.visible;
+    in-out property<bool> key-1-visible <=> key-1.visible;
+    in-out property<bool> key-2-visible <=> key-2.visible;
+    in-out property<bool> key-3-visible <=> key-3.visible;
+    in-out property<bool> key-4-visible <=> key-4.visible;
+    in-out property<bool> key-5-visible <=> key-5.visible;
+    in-out property<bool> key-6-visible <=> key-6.visible;
+    in-out property<bool> key-7-visible <=> key-7.visible;
+    in-out property<bool> key-8-visible <=> key-8.visible;
+    in-out property<bool> key-9-visible <=> key-9.visible;
+    in-out property<bool> key-c-visible <=> key-c.visible;
+    in-out property<bool> parking-slot-visible <=> parking-slot.visible;
+    in-out property<bool> pay-visible <=> pay.visible;
+    in-out property<bool> payment-visible <=> payment.visible;
+    in-out property<bool> welcome-visible <=> welcome.visible;
+    callback accept-clicked <=> accept.clicked;
+    callback card-clicked <=> card.clicked;
+    callback cash-clicked <=> cash.clicked;
+    callback english-clicked <=> english.clicked;
+    callback good-bye-clicked <=> good-bye.clicked;
+    callback home-clicked <=> home.clicked;
+    callback ic-clicked <=> ic.clicked;
+    callback key-0-clicked <=> key-0.clicked;
+    callback key-1-clicked <=> key-1.clicked;
+    callback key-2-clicked <=> key-2.clicked;
+    callback key-3-clicked <=> key-3.clicked;
+    callback key-4-clicked <=> key-4.clicked;
+    callback key-5-clicked <=> key-5.clicked;
+    callback key-6-clicked <=> key-6.clicked;
+    callback key-7-clicked <=> key-7.clicked;
+    callback key-8-clicked <=> key-8.clicked;
+    callback key-9-clicked <=> key-9.clicked;
+    callback key-c-clicked <=> key-c.clicked;
+    callback pay-clicked <=> pay.clicked;
+    callback welcome-clicked <=> welcome.clicked;
+    height: 240px;
+    title: "";
+    width: 320px;
+    x: 0px;
+    y: 0px;
+    Rectangle {
+        height: 240.8px;
+        width: 320.8px;
+        x: -0.4px;
+        y: -0.4px;
+        Rectangle {
+            background: #f5f5ed;
+            height: 240px;
+            width: 320px;
+            x: 0.4px;
+            y: 0.4px;
+        }
+    }
+    welcome := TouchArea {
+        x: 0px;
+        y: 0px;
+        Rectangle {
+            Rectangle {
+                height: 62.8px;
+                width: 295.2px;
+                x: 12.4px;
+                y: 12.4px;
+                Rectangle {
+                    background: #183e77;
+                    height: 61.6px;
+                    width: 294.4px;
+                    x: 0.400007px;
+                    y: 0.400002px;
+                }
+            }
+            Text {
+                color: #ffffff;
+                font-family: "SourceHanSans-Medium";
+                font-size: 39.3146px;
+                height: 39.2px;
+                horizontal-alignment: center;
+                text: "精算機";
+                vertical-alignment: center;
+                width: 132.4px;
+                x: 93.6px;
+                y: 24px;
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Bold";
+                font-size: 15.9197px;
+                height: 16.4px;
+                horizontal-alignment: center;
+                text: "画面を指でタップしてください";
+                vertical-alignment: center;
+                width: 240.4px;
+                x: 40px;
+                y: 97.2px;
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Medium";
+                font-size: 9.37242px;
+                height: 10.4px;
+                horizontal-alignment: center;
+                text: "Tap the screen.";
+                vertical-alignment: center;
+                width: 84px;
+                x: 118px;
+                y: 121.6px;
+            }
+            Rectangle {
+                height: 24.4px;
+                width: 114.4px;
+                x: 12.4px;
+                y: 150.4px;
+                Rectangle {
+                    background: #cbdfff;
+                    border-radius: 5.59999px;
+                    height: 22.8066px;
+                    width: 113.6px;
+                    x: 0.400007px;
+                    y: 0.796709px;
+                }
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Medium";
+                font-size: 6.38136px;
+                height: 6.8px;
+                horizontal-alignment: center;
+                text: "お支払方法";
+                vertical-alignment: center;
+                width: 35.6px;
+                x: 51.6px;
+                y: 155.6px;
+            }
+            Rectangle {
+                height: 64.8px;
+                width: 296px;
+                x: 12px;
+                y: 163.2px;
+                Rectangle {
+                    background: #ffffff;
+                    border-color: #cbdfff;
+                    border-radius: 6.39999px;
+                    border-width: 1.6px;
+                    height: 61.32px;
+                    width: 292.506px;
+                    x: 1.74705px;
+                    y: 1.74px;
+                }
+            }
+            Image {
+                height: 21.2px;
+                image-fit: contain;
+                source: @image-url("images/おこづかいアイコン2 (1).png");
+                width: 23.2px;
+                x: 34.4px;
+                y: 186px;
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Medium";
+                font-size: 5.22667px;
+                height: 5.6px;
+                horizontal-alignment: center;
+                text: "現金";
+                vertical-alignment: center;
+                width: 11.6px;
+                x: 40.4px;
+                y: 171.6px;
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Medium";
+                font-size: 4.48px;
+                height: 5.2px;
+                horizontal-alignment: center;
+                text: "新紙幣も使えます";
+                vertical-alignment: center;
+                width: 40.4px;
+                x: 25.6px;
+                y: 210.8px;
+            }
+            Image {
+                height: 11.2px;
+                image-fit: contain;
+                source: @image-url("images/498ce93ca6ff4e67903ef063d0f0323128da491d.png");
+                width: 17.2px;
+                x: 125.6px;
+                y: 204.4px;
+            }
+            Image {
+                height: 11.2px;
+                image-fit: contain;
+                source: @image-url("images/730f0f6b1a881c07b6539bb9b5886d8c8d625807.png");
+                width: 14.8px;
+                x: 106.4px;
+                y: 204.4px;
+            }
+            Image {
+                height: 18px;
+                image-fit: contain;
+                source: @image-url("images/78c7ddb491d416672ef5bb72b2851002798037cd.png");
+                width: 18px;
+                x: 84.4px;
+                y: 200.8px;
+            }
+            Image {
+                height: 17.6px;
+                image-fit: contain;
+                source: @image-url("images/05fb0171bc9c95570a5e46f62b87df372ecfe9d4.png");
+                width: 24.4px;
+                x: 122.8px;
+                y: 182.8px;
+            }
+            Image {
+                height: 11.2px;
+                image-fit: contain;
+                source: @image-url("images/logo_Visa_s.png");
+                width: 22.4px;
+                x: 82.4px;
+                y: 186px;
+            }
+            Image {
+                height: 12.8px;
+                image-fit: contain;
+                source: @image-url("images/8e29757faf8d84aef5487a00405801fc68e82f7f.png");
+                width: 18px;
+                x: 104.8px;
+                y: 185.2px;
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Medium";
+                font-size: 5.22667px;
+                height: 5.2px;
+                horizontal-alignment: center;
+                text: "クレジットカード";
+                vertical-alignment: center;
+                width: 43.2px;
+                x: 92.4px;
+                y: 171.6px;
+            }
+            Image {
+                height: 14px;
+                image-fit: contain;
+                source: @image-url("images/suica.png");
+                width: 19.6px;
+                x: 180px;
+                y: 180.8px;
+            }
+            Image {
+                height: 15.6px;
+                image-fit: contain;
+                source: @image-url("images/kitaca.png");
+                width: 17.2px;
+                x: 159.2px;
+                y: 180px;
+            }
+            Image {
+                height: 14.8px;
+                image-fit: contain;
+                source: @image-url("images/pasmo.png");
+                width: 20px;
+                x: 201.2px;
+                y: 180.4px;
+            }
+            Image {
+                height: 10.4px;
+                image-fit: contain;
+                source: @image-url("images/toica.png");
+                width: 20px;
+                x: 156.8px;
+                y: 195.2px;
+            }
+            Image {
+                height: 8.8px;
+                image-fit: contain;
+                source: @image-url("images/manaca.png");
+                width: 23.6px;
+                x: 177.6px;
+                y: 196.8px;
+            }
+            Image {
+                height: 12.8px;
+                image-fit: contain;
+                source: @image-url("images/icoca.png");
+                width: 20px;
+                x: 201.2px;
+                y: 195.6px;
+            }
+            Image {
+                height: 11.6px;
+                image-fit: contain;
+                source: @image-url("images/sugoca.png");
+                width: 19.2px;
+                x: 157.2px;
+                y: 207.2px;
+            }
+            Image {
+                height: 8px;
+                image-fit: contain;
+                source: @image-url("images/nimoca.png");
+                width: 21.2px;
+                x: 178.4px;
+                y: 209.2px;
+            }
+            Image {
+                height: 8.8px;
+                image-fit: contain;
+                source: @image-url("images/はやかけん.png");
+                width: 20px;
+                x: 201.2px;
+                y: 209.2px;
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Medium";
+                font-size: 5.22667px;
+                height: 5.6px;
+                horizontal-alignment: center;
+                text: "交通系IC";
+                vertical-alignment: center;
+                width: 24px;
+                x: 178px;
+                y: 171.6px;
+            }
+            Image {
+                height: 19.2px;
+                image-fit: contain;
+                source: @image-url("images/7c3a9aed3242d4cef15d5cece6939b528aa659c8.png");
+                width: 26.4px;
+                x: 274.4px;
+                y: 190.8px;
+            }
+            Image {
+                height: 12.8px;
+                image-fit: contain;
+                source: @image-url("images/88b22f4bc2aa84a66895e3451a3ab988af08a648.png");
+                width: 17.2px;
+                x: 254.4px;
+                y: 194px;
+            }
+            Image {
+                height: 13.2px;
+                image-fit: contain;
+                source: @image-url("images/eff4e4d3000699fe98a14af52a191fe59a4d7427.png");
+                width: 18.4px;
+                x: 232px;
+                y: 194px;
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Medium";
+                font-size: 5.22667px;
+                height: 5.6px;
+                horizontal-alignment: center;
+                text: "電子マネー";
+                vertical-alignment: center;
+                width: 28px;
+                x: 249.2px;
+                y: 171.6px;
+            }
+            Rectangle {
+                height: 46px;
+                width: 2px;
+                x: 152.4px;
+                y: 172.8px;
+                Rectangle {
+                    background: #183e77;
+                    height: 44.8px;
+                    width: 0.799999px;
+                    x: 0.400007px;
+                    y: 0.400006px;
+                }
+            }
+            Rectangle {
+                height: 46px;
+                width: 2px;
+                x: 75.6px;
+                y: 172.8px;
+                Rectangle {
+                    background: #183e77;
+                    height: 44.8px;
+                    width: 0.799999px;
+                    x: 0.400004px;
+                    y: 0.400006px;
+                }
+            }
+            Rectangle {
+                height: 46px;
+                width: 2px;
+                x: 224.8px;
+                y: 172.8px;
+                Rectangle {
+                    background: #183e77;
+                    height: 44.8px;
+                    width: 0.799999px;
+                    x: 0.799995px;
+                    y: 0.400006px;
+                }
+            }
+        }
+    }
+    header := Rectangle {
+        visible: false;
+        x: 0px;
+        y: 0px;
+        Rectangle {
+            height: 62.4px;
+            width: 354px;
+            x: -22.8px;
+            y: -31.2px;
+            Rectangle {
+                background: #183e77;
+                height: 61.6px;
+                width: 352.8px;
+                x: 0.400002px;
+                y: 0.400001px;
+            }
+        }
+        home := TouchArea {
+            height: 20px;
+            width: 51.2px;
+            x: 12.4px;
+            y: 5.2px;
+            Rectangle {
+                height: 20px;
+                width: 51.2px;
+                x: home.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(-360deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 10px;
+                    drop-shadow-color: #a6202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 50px;
+                    x: 0.400007px;
+                    y: 0.799994px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 6.8px;
+                    horizontal-alignment: center;
+                    text: "トップに戻る";
+                    vertical-alignment: center;
+                    width: 38.4px;
+                    x: 6px;
+                    y: 6.4px;
+                }
+            }
+        }
+        english := TouchArea {
+            height: 20px;
+            width: 51.2px;
+            x: 256.4px;
+            y: 5.2px;
+            Rectangle {
+                height: 20px;
+                width: 51.2px;
+                x: english.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(-360deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 10px;
+                    drop-shadow-color: #a6202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 50px;
+                    x: 0.799993px;
+                    y: 0.799994px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 7.2px;
+                    horizontal-alignment: center;
+                    text: "English";
+                    vertical-alignment: center;
+                    width: 25.6px;
+                    x: 12.4px;
+                    y: 6.8px;
+                }
+            }
+        }
+        Text {
+            color: #ffffff;
+            font-family: "SourceHanSans-Bold";
+            font-size: 11.1679px;
+            height: 8.8px;
+            horizontal-alignment: center;
+            text: "12：24";
+            vertical-alignment: center;
+            width: 39.2px;
+            x: 200.8px;
+            y: 10.8px;
+        }
+    }
+    footer := Rectangle {
+        visible: false;
+        x: 0px;
+        y: 0px;
+        Rectangle {
+            height: 26px;
+            width: 320.8px;
+            x: -0.4px;
+            y: 214.8px;
+            Rectangle {
+                background: #e9f1ff;
+                height: 24.8px;
+                width: 320px;
+                x: 0.4px;
+                y: 0.799995px;
+            }
+        }
+    }
+    parking-slot := Rectangle {
+        visible: false;
+        x: 0px;
+        y: 0px;
+        Text {
+            color: #000000;
+            font-family: "SourceHanSans-Bold";
+            font-size: 13.0667px;
+            height: 13.6px;
+            horizontal-alignment: center;
+            text: "駐車位置番号を入力してください";
+            vertical-alignment: center;
+            width: 216px;
+            x: 52px;
+            y: 49.6px;
+        }
+        key-1 := TouchArea {
+            height: 20px;
+            width: 35.2px;
+            x: 172.4px;
+            y: 81.6px;
+            Rectangle {
+                height: 20px;
+                width: 35.2px;
+                x: key-1.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.400007px;
+                    y: 0.799993px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "1";
+                    vertical-alignment: center;
+                    width: 3.2px;
+                    x: 15.6px;
+                    y: 7.6px;
+                }
+            }
+        }
+        key-2 := TouchArea {
+            height: 20px;
+            width: 35.2px;
+            x: 212.4px;
+            y: 81.6px;
+            Rectangle {
+                height: 20px;
+                width: 35.2px;
+                x: key-2.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.799997px;
+                    y: 0.799993px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "2";
+                    vertical-alignment: center;
+                    width: 3.6px;
+                    x: 15.6px;
+                    y: 7.6px;
+                }
+            }
+        }
+        key-3 := TouchArea {
+            height: 20px;
+            width: 35.2px;
+            x: 253.2px;
+            y: 81.6px;
+            Rectangle {
+                height: 20px;
+                width: 35.2px;
+                x: key-3.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.400006px;
+                    y: 0.799993px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "3";
+                    vertical-alignment: center;
+                    width: 3.6px;
+                    x: 15.2px;
+                    y: 7.6px;
+                }
+            }
+        }
+        key-4 := TouchArea {
+            height: 19.6px;
+            width: 35.2px;
+            x: 172.4px;
+            y: 106.4px;
+            Rectangle {
+                height: 19.6px;
+                width: 35.2px;
+                x: key-4.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.400007px;
+                    y: 0.799998px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "4";
+                    vertical-alignment: center;
+                    width: 4px;
+                    x: 15.2px;
+                    y: 7.6px;
+                }
+            }
+        }
+        key-5 := TouchArea {
+            height: 19.6px;
+            width: 35.2px;
+            x: 212.4px;
+            y: 106.4px;
+            Rectangle {
+                height: 19.6px;
+                width: 35.2px;
+                x: key-5.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.799997px;
+                    y: 0.799998px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "5";
+                    vertical-alignment: center;
+                    width: 3.6px;
+                    x: 15.6px;
+                    y: 7.6px;
+                }
+            }
+        }
+        key-6 := TouchArea {
+            height: 19.6px;
+            width: 35.2px;
+            x: 253.2px;
+            y: 106.4px;
+            Rectangle {
+                height: 19.6px;
+                width: 35.2px;
+                x: key-6.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.400006px;
+                    y: 0.799998px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "6";
+                    vertical-alignment: center;
+                    width: 3.2px;
+                    x: 15.6px;
+                    y: 7.6px;
+                }
+            }
+        }
+        key-7 := TouchArea {
+            height: 19.2px;
+            width: 35.2px;
+            x: 172.4px;
+            y: 131.6px;
+            Rectangle {
+                height: 19.2px;
+                width: 35.2px;
+                x: key-7.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.400007px;
+                    y: 0.400003px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "7";
+                    vertical-alignment: center;
+                    width: 3.6px;
+                    x: 15.2px;
+                    y: 7.2px;
+                }
+            }
+        }
+        key-8 := TouchArea {
+            height: 19.2px;
+            width: 35.2px;
+            x: 212.4px;
+            y: 131.6px;
+            Rectangle {
+                height: 19.2px;
+                width: 35.2px;
+                x: key-8.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.799997px;
+                    y: 0.400003px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "8";
+                    vertical-alignment: center;
+                    width: 3.2px;
+                    x: 16px;
+                    y: 7.2px;
+                }
+            }
+        }
+        key-9 := TouchArea {
+            height: 19.2px;
+            width: 35.2px;
+            x: 253.2px;
+            y: 131.6px;
+            Rectangle {
+                height: 19.2px;
+                width: 35.2px;
+                x: key-9.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.400006px;
+                    y: 0.400003px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "9";
+                    vertical-alignment: center;
+                    width: 3.2px;
+                    x: 15.6px;
+                    y: 7.2px;
+                }
+            }
+        }
+        key-0 := TouchArea {
+            height: 20px;
+            width: 35.2px;
+            x: 212.4px;
+            y: 156px;
+            Rectangle {
+                height: 20px;
+                width: 35.2px;
+                x: key-0.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.799997px;
+                    y: 0.799994px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 6.27374px;
+                    height: 4.8px;
+                    horizontal-alignment: center;
+                    text: "0";
+                    vertical-alignment: center;
+                    width: 3.2px;
+                    x: 16px;
+                    y: 7.6px;
+                }
+            }
+        }
+        key-c := TouchArea {
+            height: 20px;
+            width: 35.2px;
+            x: 253.2px;
+            y: 156px;
+            Rectangle {
+                height: 20px;
+                width: 35.2px;
+                x: key-c.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(0deg, #dadada 0%, #ffffff 100%);
+                    border-radius: 2.4px;
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #52202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 34px;
+                    x: 0.400006px;
+                    y: 0.799994px;
+                }
+                Text {
+                    color: #000000;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 5.22667px;
+                    height: 5.2px;
+                    horizontal-alignment: center;
+                    text: "クリア";
+                    vertical-alignment: center;
+                    width: 16.4px;
+                    x: 9.2px;
+                    y: 7.6px;
+                }
+            }
+        }
+        Rectangle {
+            height: 92.8px;
+            width: 143.2px;
+            x: 17.2px;
+            y: 82.4px;
+            Rectangle {
+                background: #ffffff;
+                border-color: #6f6f6f;
+                border-radius: 7.99999px;
+                border-width: 2.4px;
+                height: 91.46px;
+                width: 141.915px;
+                x: 0.642261px;
+                y: 0.670004px;
+            }
+        }
+        Text {
+            color: #000000;
+            font-family: "SourceHanSans-Medium";
+            font-size: 8.96px;
+            height: 7.2px;
+            horizontal-alignment: center;
+            text: "NO.";
+            vertical-alignment: center;
+            width: 17.2px;
+            x: 44px;
+            y: 134.8px;
+        }
+        Rectangle {
+            height: 36px;
+            width: 28.4px;
+            x: 70px;
+            y: 110.8px;
+            Rectangle {
+                background: #ffffff;
+                border-color: #000000;
+                border-width: 1px;
+                height: 35.2px;
+                width: 27.6px;
+                x: 0.399999px;
+                y: 0.399994px;
+            }
+        }
+        digit10 := Text {
+            color: #000000;
+            font-family: "SourceHanSans-Medium";
+            font-size: 17.0115px;
+            height: 13.2px;
+            horizontal-alignment: center;
+            text: "1";
+            vertical-alignment: center;
+            width: 8px;
+            x: 80px;
+            y: 122.4px;
+        }
+        Rectangle {
+            height: 36px;
+            width: 28.4px;
+            x: 106px;
+            y: 110.8px;
+            Rectangle {
+                background: #ffffff;
+                border-color: #000000;
+                border-width: 1px;
+                height: 35.2px;
+                width: 27.6px;
+                x: 0.400003px;
+                y: 0.399994px;
+            }
+        }
+        digit1 := Text {
+            color: #000000;
+            font-family: "SourceHanSans-Medium";
+            font-size: 17.0115px;
+            height: 13.6px;
+            horizontal-alignment: center;
+            text: "2";
+            vertical-alignment: center;
+            width: 9.2px;
+            x: 115.6px;
+            y: 122px;
+        }
+        accept := TouchArea {
+            height: 20px;
+            width: 143.2px;
+            x: 17.2px;
+            y: 183.6px;
+            Rectangle {
+                height: 20px;
+                width: 143.2px;
+                x: accept.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(-180deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #3b202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 18.4px;
+                    width: 142.4px;
+                    x: 0.400002px;
+                    y: 0.799996px;
+                }
+                Rectangle {
+                    height: 8.4px;
+                    width: 35.2px;
+                    x: 62px;
+                    y: 5.6px;
+                    VerticalBox {
+                        padding: 0;
+                        HorizontalBox {
+                            padding: 0;
+                            Text {
+                                color: #ffffff;
+                                font-family: "SourceHanSans-Medium";
+                                font-size: 8.26339px;
+                                horizontal-alignment: center;
+                                stroke: #52575249;
+                                stroke-width: 0.8px;
+                                text: "確定　";
+                                vertical-alignment: center;
+                            }
+                            Text {
+                                color: #ffffff;
+                                font-family: "SourceHanSans-Medium";
+                                font-size: 5.90079px;
+                                horizontal-alignment: center;
+                                stroke: #52575249;
+                                stroke-width: 0.8px;
+                                text: "▶";
+                                vertical-alignment: center;
+                            }
+                        }
+                        HorizontalBox {
+                            padding: 0;
+                            Text {
+                                color: #ffffff;
+                                font-family: "SourceHanSans-Medium";
+                                font-size: 5.90079px;
+                                horizontal-alignment: center;
+                                stroke: #52575249;
+                                stroke-width: 0.8px;
+                                text: "";
+                                vertical-alignment: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    payment := Rectangle {
+        visible: false;
+        x: 0px;
+        y: 0px;
+        Rectangle {
+            height: 33.2px;
+            width: 196.4px;
+            x: 70.4px;
+            y: 39.6px;
+            Rectangle {
+                background: #ffffff;
+                height: 32px;
+                width: 195.2px;
+                x: 0.455827px;
+                y: 0.796142px;
+            }
+        }
+        Text {
+            color: #000000;
+            font-family: "SourceHanSans-Bold";
+            font-size: 13.0667px;
+            height: 13.6px;
+            horizontal-alignment: center;
+            text: "料金は";
+            vertical-alignment: center;
+            width: 43.6px;
+            x: 19.6px;
+            y: 54.8px;
+        }
+        Text {
+            color: #000000;
+            font-family: "SourceHanSans-Bold";
+            font-size: 18.3591px;
+            height: 14.8px;
+            horizontal-alignment: center;
+            text: "200";
+            vertical-alignment: center;
+            width: 36.8px;
+            x: 150px;
+            y: 49.6px;
+        }
+        Text {
+            color: #000000;
+            font-family: "SourceHanSans-Bold";
+            font-size: 10.0909px;
+            height: 10px;
+            horizontal-alignment: center;
+            text: "円";
+            vertical-alignment: center;
+            width: 9.2px;
+            x: 245.6px;
+            y: 58.4px;
+        }
+        Text {
+            color: #000000;
+            font-family: "SourceHanSans-Bold";
+            font-size: 13.0667px;
+            height: 12.8px;
+            horizontal-alignment: center;
+            text: "です";
+            vertical-alignment: center;
+            width: 26.8px;
+            x: 273.6px;
+            y: 55.2px;
+        }
+        Text {
+            color: #000000;
+            font-family: "SourceHanSans-Bold";
+            font-size: 10.4533px;
+            height: 10.8px;
+            horizontal-alignment: center;
+            text: "お支払方法をお選びください";
+            vertical-alignment: center;
+            width: 152.8px;
+            x: 84px;
+            y: 92.4px;
+        }
+        cash := TouchArea {
+            height: 36.4px;
+            width: 126px;
+            x: 30.4px;
+            y: 117.2px;
+            Rectangle {
+                height: 36.4px;
+                width: 126px;
+                x: cash.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(-180deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #3b202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 35.2px;
+                    width: 124.8px;
+                    x: 0.796041px;
+                    y: 0.400918px;
+                }
+                Text {
+                    color: #ffffff;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 12.6933px;
+                    height: 13.2px;
+                    horizontal-alignment: center;
+                    stroke: #3d575249;
+                    stroke-width: 0.8px;
+                    text: "現金";
+                    vertical-alignment: center;
+                    width: 28px;
+                    x: 49.2px;
+                    y: 11.6px;
+                }
+            }
+        }
+        card := TouchArea {
+            height: 36.4px;
+            width: 126px;
+            x: 163.2px;
+            y: 117.2px;
+            Rectangle {
+                height: 36.4px;
+                width: 126px;
+                x: card.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(-180deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #3b202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 35.2px;
+                    width: 124.8px;
+                    x: 0.796029px;
+                    y: 0.400918px;
+                }
+                Text {
+                    color: #ffffff;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 12.6933px;
+                    height: 12.8px;
+                    horizontal-alignment: center;
+                    stroke: #3d575249;
+                    stroke-width: 0.8px;
+                    text: "クレジットカード";
+                    vertical-alignment: center;
+                    width: 104.8px;
+                    x: 10.8px;
+                    y: 11.6px;
+                }
+            }
+        }
+        ic := TouchArea {
+            height: 36.4px;
+            width: 126px;
+            x: 30.4px;
+            y: 160.4px;
+            Rectangle {
+                height: 36.4px;
+                width: 126px;
+                x: ic.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(-180deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #3b202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 35.2px;
+                    width: 124.8px;
+                    x: 0.796041px;
+                    y: 0.40092px;
+                }
+                Text {
+                    color: #ffffff;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 12.6933px;
+                    height: 12.8px;
+                    horizontal-alignment: center;
+                    stroke: #3d575249;
+                    stroke-width: 0.8px;
+                    text: "交通系IC";
+                    vertical-alignment: center;
+                    width: 58.4px;
+                    x: 34px;
+                    y: 11.6px;
+                }
+            }
+        }
+        pay := TouchArea {
+            height: 36.4px;
+            width: 126px;
+            x: 163.2px;
+            y: 160.4px;
+            Rectangle {
+                height: 36.4px;
+                width: 126px;
+                x: pay.pressed ? 2px : 1px;
+                y: self.x;
+                Rectangle {
+                    background: @linear-gradient(-180deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
+                    drop-shadow-blur: 6px;
+                    drop-shadow-color: #3b202020;
+                    drop-shadow-offset-x: 3.01884px;
+                    drop-shadow-offset-y: 2.62424px;
+                    height: 35.2px;
+                    width: 124.8px;
+                    x: 0.796029px;
+                    y: 0.40092px;
+                }
+                Text {
+                    color: #ffffff;
+                    font-family: "SourceHanSans-Medium";
+                    font-size: 12.6933px;
+                    height: 12px;
+                    horizontal-alignment: center;
+                    stroke: #3d575249;
+                    stroke-width: 0.8px;
+                    text: "電子マネー";
+                    vertical-alignment: center;
+                    width: 67.6px;
+                    x: 29.2px;
+                    y: 12.4px;
+                }
+            }
+        }
+        Text {
+            color: #000000;
+            font-family: "SourceHanSans-Bold";
+            font-size: 9.33333px;
+            height: 10px;
+            horizontal-alignment: center;
+            text: "サービス券は先に入れてください";
+            vertical-alignment: center;
+            width: 154.8px;
+            x: 82.8px;
+            y: 223.2px;
+        }
+    }
+    good-bye := TouchArea {
+        visible: false;
+        x: 0px;
+        y: 0px;
+        Rectangle {
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Bold";
+                font-size: 15.9197px;
+                height: 16.8px;
+                horizontal-alignment: center;
+                text: "ご利用ありがとうございました";
+                vertical-alignment: center;
+                width: 240.8px;
+                x: 39.6px;
+                y: 100.8px;
+            }
+            Rectangle {
+                height: 2.4px;
+                width: 213.6px;
+                x: 53.2px;
+                y: 126.4px;
+                Rectangle {
+                    background: #183e77;
+                    height: 0.800014px;
+                    width: 212.4px;
+                    x: 0.400006px;
+                    y: 0.799993px;
+                }
+            }
+            Text {
+                color: #000000;
+                font-family: "SourceHanSans-Bold";
+                font-size: 10.9478px;
+                height: 32px;
+                horizontal-alignment: center;
+                text: "精算後5分で再びロック板が上がりますので\n５分以内に出庫してください";
+                vertical-alignment: center;
+                width: 240.4px;
+                x: 39.6px;
+                y: 144.8px;
+            }
+        }
+    }
+}

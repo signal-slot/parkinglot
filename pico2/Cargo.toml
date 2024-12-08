@@ -1,0 +1,35 @@
+[package]
+name = "carpark_pico2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+display-interface = "0.5.0"
+display-interface-spi = "0.5.0"
+embedded-hal = "1.0.0"
+embedded-hal-nb = "1.0.0"
+embedded-hal-bus = "0.2.0"
+embedded-dma = "0.2.0"
+embedded-alloc = "0.6.0"
+embedded-graphics = "0.8.1"
+embedded-graphics-core = "0.4.0"
+embedded-display-controller = "0.2.0"
+embedded-time = "0.12.1"
+rp235x-hal= { version = "0.2.0", features = [
+    "binary-info",
+    "critical-section-impl",
+    "defmt",
+]}
+rp235x-pac = "0.1.0"
+panic-halt = "0.2.0"
+panic-probe = "0.3.2"
+cortex-m = "0.7.2"
+cortex-m-rt = "0.7"
+mipidsi = "0.8.0"
+euclid = { version = "0.22", default-features = false}
+slint = { version = "1.8", default-features = false, features = ["compat-1-2", "renderer-software", "unsafe-single-threaded", "libm"] }
+fugit = "0.3.6"
+critical-section = {optional = true, version = "1.0.0"}
+
+[build-dependencies]
+slint-build = { version="1.8.0", git = "https://github.com/slint-ui/slint", rev="refs/tags/v1.8.0"  }

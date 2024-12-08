@@ -1,0 +1,59 @@
+import {MainWindow} from "MainWindow.slint";
+import {Button} from "std-widgets.slint";
+
+export component Application inherits MainWindow {
+
+    property <int> page_index: 0;
+
+    function welcome() { root.page_index = 0; }
+    function next_page() { root.page_index += 1; }
+    
+    header-visible: root.page_index > 0;
+    home-clicked => {welcome()}
+    footer-visible: root.page_index > 0;
+    
+    welcome-visible: root.page_index == 0;
+    welcome-clicked => {next_page()}
+    
+    parking-slot-visible: root.page_index == 1;
+    changed parking-slot-visible => { clear_slot() }
+    accept-clicked => {
+        if (root.digit1-text != "") {
+            next_page()
+        }
+    }
+    digit10-text: "";
+    digit1-text: "";
+    function key_clicked(digit: string) {
+        if (root.digit1-text == "") {
+            root.digit1-text = digit;
+        } else if (root.digit10-text == "") {
+            root.digit10-text = root.digit1-text;
+            root.digit1-text = digit;
+        }
+    }
+    key-0-clicked => {key_clicked("0")}
+    key-1-clicked => {key_clicked("1")}
+    key-2-clicked => {key_clicked("2")}
+    key-3-clicked => {key_clicked("3")}
+    key-4-clicked => {key_clicked("4")}
+    key-5-clicked => {key_clicked("5")}
+    key-6-clicked => {key_clicked("6")}
+    key-7-clicked => {key_clicked("7")}
+    key-8-clicked => {key_clicked("8")}
+    key-9-clicked => {key_clicked("9")}
+    key-c-clicked => {clear_slot()}
+    function clear_slot() {
+        root.digit1-text = "";
+        root.digit10-text = "";
+    }
+
+    payment-visible: root.page_index == 2;
+    cash-clicked => {next_page()}
+    ic-clicked => {next_page()}
+    pay-clicked => {next_page()}
+    card-clicked => {next_page()}
+
+    good-bye-visible: root.page_index == 3;
+    good-bye-clicked => {welcome()}
+}

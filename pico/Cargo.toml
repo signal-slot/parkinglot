@@ -1,0 +1,15 @@
+[package]
+name = "slint-carpark-pico"
+version = "0.2.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+slint = { version="1.8.0", git = "https://github.com/slint-ui/slint", default-features = false, features = ["compat-1-2", "unsafe-single-threaded", "libm", "renderer-software"], rev="refs/tags/v1.8.0" }
+mcu-board-support = { version="1.8.0", git = "https://github.com/slint-ui/slint", rev="refs/tags/v1.8.0" }
+
+[build-dependencies]
+slint-build = { version="1.8.0", git = "https://github.com/slint-ui/slint", rev="refs/tags/v1.8.0"  }
+
+[features]
+pico = ["mcu-board-support/pico-st7789"]

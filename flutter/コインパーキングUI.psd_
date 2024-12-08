@@ -1,0 +1,418 @@
+{
+    "exports": {
+        "Flutter": {
+            "fontScaleFactor": 1,
+            "height": 600,
+            "imageScaling": false,
+            "makeCompact": false,
+            "resolution": null,
+            "resolutionIndex": 0,
+            "width": 800
+        },
+        "QtQuick": {
+            "fontScaleFactor": 1,
+            "height": 600,
+            "imageScaling": true,
+            "makeCompact": false,
+            "resolution": null,
+            "resolutionIndex": 8,
+            "width": 1024
+        }
+    },
+    "layers": {
+        "129": {
+            "id": "welcome",
+            "name": "Welcome",
+            "native": 1,
+            "properties": [
+                "visible"
+            ],
+            "type": 2,
+            "visible": true
+        },
+        "147": {
+            "id": "cancel",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "148": {
+            "id": "",
+            "name": "長方形 7",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "152": {
+            "id": "header",
+            "name": "Header",
+            "native": 0,
+            "properties": [
+                "visible"
+            ],
+            "type": 2,
+            "visible": false
+        },
+        "155": {
+            "id": "key 1",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "156": {
+            "id": "",
+            "name": "長方形 7 のコピー 2",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "157": {
+            "id": "key 2",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "158": {
+            "id": "",
+            "name": "長方形 7 のコピー 3",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "159": {
+            "id": "key 3",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "160": {
+            "id": "",
+            "name": "長方形 7 のコピー 4",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "161": {
+            "id": "key 4",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "162": {
+            "id": "",
+            "name": "長方形 7 のコピー 5",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "163": {
+            "id": "key 5",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "164": {
+            "id": "",
+            "name": "長方形 7 のコピー 5",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "165": {
+            "id": "key 6",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "166": {
+            "id": "",
+            "name": "長方形 7 のコピー 5",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "167": {
+            "id": "key 7",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "168": {
+            "id": "",
+            "name": "長方形 7 のコピー 6",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "169": {
+            "id": "key 8",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "170": {
+            "id": "",
+            "name": "長方形 7 のコピー 6",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "171": {
+            "id": "key 9",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "172": {
+            "id": "",
+            "name": "長方形 7 のコピー 6",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "173": {
+            "id": "key 0",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "174": {
+            "id": "",
+            "name": "長方形 7 のコピー 7",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "175": {
+            "id": "key c",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "176": {
+            "id": "",
+            "name": "長方形 7 のコピー 7",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "181": {
+            "id": "digit10",
+            "name": "",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "183": {
+            "id": "digit1",
+            "name": "",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "184": {
+            "id": "accept",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "185": {
+            "id": "",
+            "name": "ボタン",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "188": {
+            "id": "footer",
+            "name": "Footer",
+            "native": 0,
+            "properties": [
+                "visible"
+            ],
+            "type": 2,
+            "visible": false
+        },
+        "195": {
+            "id": "parking slot",
+            "name": "ParkingSlot",
+            "native": 0,
+            "properties": [
+                "visible"
+            ],
+            "type": 2,
+            "visible": false
+        },
+        "199": {
+            "id": "amount",
+            "name": "",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "203": {
+            "id": "cash",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "204": {
+            "id": "",
+            "name": "支払い選択ボタン1",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "205": {
+            "id": "card",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "206": {
+            "id": "",
+            "name": "支払い選択ボタン2",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "207": {
+            "id": "ic",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "208": {
+            "id": "",
+            "name": "支払い選択ボタン3",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "209": {
+            "id": "pay",
+            "name": "",
+            "native": 1,
+            "properties": [
+            ],
+            "type": 0,
+            "visible": true
+        },
+        "210": {
+            "id": "",
+            "name": "支払い選択ボタン4",
+            "native": 0,
+            "properties": [
+            ],
+            "type": 1,
+            "visible": true
+        },
+        "211": {
+            "id": "payment",
+            "name": "Payment",
+            "native": 0,
+            "properties": [
+                "visible"
+            ],
+            "type": 2,
+            "visible": false
+        },
+        "229": {
+            "id": "good bye",
+            "name": "GoodBye",
+            "native": 1,
+            "properties": [
+                "visible"
+            ],
+            "type": 2,
+            "visible": false
+        }
+    },
+    "qtpsdparser.hint": 1
+}
