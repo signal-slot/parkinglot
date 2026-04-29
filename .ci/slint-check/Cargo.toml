@@ -1,0 +1,18 @@
+[package]
+name = "slint-check"
+version = "0.0.1"
+edition = "2021"
+publish = false
+
+# Tiny crate used by .github/workflows/ci.yml to compile-check that
+#   slint/main.slint
+# resolves against
+#   design/slint/$SLINT_RES/MainWindow.slint
+# without runtime side effects. Picks the design directory at build time
+# from the SLINT_RES env var.
+
+[dependencies]
+slint = { version = "1.14", default-features = false, features = ["compat-1-2", "std", "renderer-software"] }
+
+[build-dependencies]
+slint-build = "1.14"

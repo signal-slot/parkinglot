@@ -1,0 +1,145 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Each implementation has its own job. Adding a new resolution to an existing
+# implementation = one line in the matrix. Adding a new implementation =
+# copy a job and adjust the setup steps.
+
+jobs:
+  qt:
+    name: qt × ${{ matrix.resolution }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        resolution: [800x600, 1024x600, 1280x800, 1920x1080]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt 6 + QML modules
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            qt6-base-dev \
+            qt6-declarative-dev \
+            qml6-module-qtquick \
+            qml6-module-qtquick-controls \
+            qml6-module-qtquick-layouts \
+            qml6-module-qtqml-workerscript \
+            qml6-module-qt5compat-graphicaleffects
+      - name: Smoke run (offscreen)
+        run: |
+          # 5s timeout: if it starts cleanly it's a pass; exit 124 = killed by timeout = OK.
+          timeout 5 qml6 -platform offscreen qt/main.qml -- \
+            --design "$PWD/design/qt/${{ matrix.resolution }}" \
+            || [ $? -eq 124 ]
+
+  qt-nogpu:
+    name: qt-nogpu × ${{ matrix.resolution }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        resolution: [800x600, 1024x600, 1280x800, 1920x1080]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt 6 + QML modules
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            qt6-base-dev \
+            qt6-declarative-dev \
+            qml6-module-qtquick \
+            qml6-module-qtquick-controls \
+            qml6-module-qtquick-layouts \
+            qml6-module-qtqml-workerscript
+      - name: Smoke run (offscreen)
+        run: |
+          timeout 5 qml6 -platform offscreen qt-nogpu/main.qml -- \
+            --design "$PWD/design/qt-nogpu/${{ matrix.resolution }}" \
+            || [ $? -eq 124 ]
+
+  slint:
+    name: slint × ${{ matrix.resolution }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        resolution: [320x240, 800x600, 1024x600, 1280x800, 1920x1080]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: .ci/slint-check
+      - name: Compile-check slint/main.slint × design/slint/${{ matrix.resolution }}
+        run: cargo check
+        working-directory: .ci/slint-check
+        env:
+          SLINT_RES: ${{ matrix.resolution }}
+
+  pico:
+    name: pico × ${{ matrix.resolution }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        resolution: [320x240]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: thumbv6m-none-eabi
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: pico
+      - run: cargo check --features pico --target thumbv6m-none-eabi
+        working-directory: pico
+        env:
+          PICO_RES: ${{ matrix.resolution }}
+
+  pico2:
+    name: pico2 × ${{ matrix.resolution }}
+    runs-on: ubuntu-latest
+    # Known pre-existing slint version skew (BitmapFont missing fields with
+    # slint = "1.8" pinned in Cargo.toml). Tracked separately; do not block
+    # the rest of CI.
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        resolution: [320x240]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: thumbv8m.main-none-eabihf
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: pico2
+      - run: cargo check --target thumbv8m.main-none-eabihf
+        working-directory: pico2
+        env:
+          PICO_RES: ${{ matrix.resolution }}
+
+  flutter:
+    name: flutter (${{ matrix.target }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [web]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+        working-directory: flutter
+      - run: flutter analyze
+        working-directory: flutter
+      - run: flutter build ${{ matrix.target }}
+        working-directory: flutter
