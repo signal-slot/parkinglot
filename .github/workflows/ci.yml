@@ -31,10 +31,13 @@ jobs:
             qml6-module-qtqml-workerscript \
             qml6-module-qt5compat-graphicaleffects
       - name: Smoke run (offscreen)
-        # Ubuntu's Qt 6 binary is at /usr/lib/qt6/bin/qml (no version suffix).
-        # 5s timeout: if it starts cleanly it's a pass; exit 124 = killed by timeout = OK.
+        # Distros disagree on where the Qt 6 qml binary lives (Gentoo has qml6
+        # in PATH, Ubuntu noble has qml at /usr/lib/x86_64-linux-gnu/qt6/bin/qml).
+        # Ask qmake6 for the canonical bin dir.
+        # 5s timeout: starting cleanly = pass; exit 124 = killed by timeout = OK.
         run: |
-          timeout 5 /usr/lib/qt6/bin/qml -platform offscreen qt/main.qml -- \
+          QT_BIN=$(qmake6 -query QT_INSTALL_BINS)
+          timeout 5 "$QT_BIN/qml" -platform offscreen qt/main.qml -- \
             --design "$PWD/design/qt/${{ matrix.resolution }}" \
             || [ $? -eq 124 ]
 
@@ -59,7 +62,8 @@ jobs:
             qml6-module-qtqml-workerscript
       - name: Smoke run (offscreen)
         run: |
-          timeout 5 /usr/lib/qt6/bin/qml -platform offscreen qt-nogpu/main.qml -- \
+          QT_BIN=$(qmake6 -query QT_INSTALL_BINS)
+          timeout 5 "$QT_BIN/qml" -platform offscreen qt-nogpu/main.qml -- \
             --design "$PWD/design/qt-nogpu/${{ matrix.resolution }}" \
             || [ $? -eq 124 ]
 
