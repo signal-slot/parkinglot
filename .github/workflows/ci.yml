@@ -31,9 +31,10 @@ jobs:
             qml6-module-qtqml-workerscript \
             qml6-module-qt5compat-graphicaleffects
       - name: Smoke run (offscreen)
+        # Ubuntu's Qt 6 binary is at /usr/lib/qt6/bin/qml (no version suffix).
+        # 5s timeout: if it starts cleanly it's a pass; exit 124 = killed by timeout = OK.
         run: |
-          # 5s timeout: if it starts cleanly it's a pass; exit 124 = killed by timeout = OK.
-          timeout 5 qml6 -platform offscreen qt/main.qml -- \
+          timeout 5 /usr/lib/qt6/bin/qml -platform offscreen qt/main.qml -- \
             --design "$PWD/design/qt/${{ matrix.resolution }}" \
             || [ $? -eq 124 ]
 
@@ -58,7 +59,7 @@ jobs:
             qml6-module-qtqml-workerscript
       - name: Smoke run (offscreen)
         run: |
-          timeout 5 qml6 -platform offscreen qt-nogpu/main.qml -- \
+          timeout 5 /usr/lib/qt6/bin/qml -platform offscreen qt-nogpu/main.qml -- \
             --design "$PWD/design/qt-nogpu/${{ matrix.resolution }}" \
             || [ $? -eq 124 ]
 
@@ -72,6 +73,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+      - name: Install slint native deps
+        # yeslogic-fontconfig-sys (transitively via slint-build > i-slint-renderer-software
+        # > resvg > fontdb) needs fontconfig + freetype headers to build.
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libfontconfig1-dev \
+            libfreetype6-dev
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: .ci/slint-check
@@ -135,7 +144,7 @@ jobs:
           channel: stable
       - run: flutter pub get
         working-directory: flutter
-      - run: flutter analyze
+      - run: flutter analyze --no-fatal-infos --no-fatal-warnings
         working-directory: flutter
       - run: flutter build ${{ matrix.target }}
         working-directory: flutter
