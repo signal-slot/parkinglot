@@ -22,18 +22,23 @@
     "layers": {
         "129": {
             "id": "welcome",
+            "interactive": true,
             "native": 1,
+            "properties": [
+                "visible"
+            ],
             "type": 0,
             "visible": true
         },
         "147": {
             "id": "cancel",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "148": {
-            "name": "長方形 7",
+            "componentName": "長方形 7",
             "native": 0,
             "type": 1,
             "visible": true
@@ -41,137 +46,151 @@
         "152": {
             "id": "header",
             "native": 0,
+            "properties": [
+                "visible"
+            ],
             "type": 0,
             "visible": false
         },
         "155": {
             "id": "key 1",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "156": {
-            "name": "長方形 7 のコピー 2",
+            "componentName": "長方形 7 のコピー 2",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "157": {
             "id": "key 2",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "158": {
-            "name": "長方形 7 のコピー 3",
+            "componentName": "長方形 7 のコピー 3",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "159": {
             "id": "key 3",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "160": {
-            "name": "長方形 7 のコピー 4",
+            "componentName": "長方形 7 のコピー 4",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "161": {
             "id": "key 4",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "162": {
-            "name": "長方形 7 のコピー 5",
+            "componentName": "長方形 7 のコピー 5",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "163": {
             "id": "key 5",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "164": {
-            "name": "長方形 7 のコピー 5",
+            "componentName": "長方形 7 のコピー 5",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "165": {
             "id": "key 6",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "166": {
-            "name": "長方形 7 のコピー 5",
+            "componentName": "長方形 7 のコピー 5",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "167": {
             "id": "key 7",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "168": {
-            "name": "長方形 7 のコピー 6",
+            "componentName": "長方形 7 のコピー 6",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "169": {
             "id": "key 8",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "170": {
-            "name": "長方形 7 のコピー 6",
+            "componentName": "長方形 7 のコピー 6",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "171": {
             "id": "key 9",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "172": {
-            "name": "長方形 7 のコピー 6",
+            "componentName": "長方形 7 のコピー 6",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "173": {
             "id": "key 0",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "174": {
-            "name": "長方形 7 のコピー 7",
+            "componentName": "長方形 7 のコピー 7",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "175": {
             "id": "key c",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "176": {
-            "name": "長方形 7 のコピー 7",
+            "componentName": "長方形 7 のコピー 7",
             "native": 0,
             "type": 1,
             "visible": true
@@ -179,23 +198,32 @@
         "181": {
             "id": "digit10",
             "native": 0,
+            "properties": [
+                "text",
+                "visible"
+            ],
             "type": 0,
             "visible": true
         },
         "183": {
             "id": "digit1",
             "native": 0,
+            "properties": [
+                "text",
+                "visible"
+            ],
             "type": 0,
             "visible": true
         },
         "184": {
             "id": "accept",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "185": {
-            "name": "ボタン",
+            "componentName": "ボタン",
             "native": 0,
             "type": 1,
             "visible": true
@@ -203,12 +231,18 @@
         "188": {
             "id": "footer",
             "native": 0,
+            "properties": [
+                "visible"
+            ],
             "type": 0,
             "visible": false
         },
         "195": {
             "id": "parking slot",
             "native": 0,
+            "properties": [
+                "visible"
+            ],
             "type": 0,
             "visible": false
         },
@@ -220,48 +254,52 @@
         },
         "203": {
             "id": "cash",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "204": {
-            "name": "支払い選択ボタン1",
+            "componentName": "支払い選択ボタン1",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "205": {
             "id": "card",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "206": {
-            "name": "支払い選択ボタン2",
+            "componentName": "支払い選択ボタン2",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "207": {
             "id": "ic",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "208": {
-            "name": "支払い選択ボタン3",
+            "componentName": "支払い選択ボタン3",
             "native": 0,
             "type": 1,
             "visible": true
         },
         "209": {
             "id": "pay",
+            "interactive": true,
             "native": 1,
             "type": 0,
             "visible": true
         },
         "210": {
-            "name": "支払い選択ボタン4",
+            "componentName": "支払い選択ボタン4",
             "native": 0,
             "type": 1,
             "visible": true
@@ -269,12 +307,19 @@
         "211": {
             "id": "payment",
             "native": 0,
+            "properties": [
+                "visible"
+            ],
             "type": 0,
             "visible": false
         },
         "229": {
             "id": "good bye",
+            "interactive": true,
             "native": 1,
+            "properties": [
+                "visible"
+            ],
             "type": 0,
             "visible": false
         }
