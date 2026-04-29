@@ -104,10 +104,6 @@ jobs:
   pico2:
     name: pico2 × ${{ matrix.resolution }}
     runs-on: ubuntu-latest
-    # Known pre-existing slint version skew (BitmapFont missing fields with
-    # slint = "1.8" pinned in Cargo.toml). Tracked separately; do not block
-    # the rest of CI.
-    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
