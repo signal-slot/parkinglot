@@ -31,13 +31,17 @@ jobs:
             qml6-module-qtqml-workerscript \
             qml6-module-qt5compat-graphicaleffects
       - name: Smoke run (offscreen)
-        # Distros disagree on where the Qt 6 qml binary lives (Gentoo has qml6
-        # in PATH, Ubuntu noble has qml at /usr/lib/x86_64-linux-gnu/qt6/bin/qml).
-        # Ask qmake6 for the canonical bin dir.
+        # Distros disagree on where Qt 6's qml runner lives:
+        #   - Gentoo: qml6 in PATH
+        #   - Ubuntu noble: /usr/lib/x86_64-linux-gnu/qt6/bin/qml (qmake6's
+        #     QT_INSTALL_BINS reports /usr/lib/qt6/bin which does NOT exist).
+        # Search for it explicitly.
         # 5s timeout: starting cleanly = pass; exit 124 = killed by timeout = OK.
         run: |
-          QT_BIN=$(qmake6 -query QT_INSTALL_BINS)
-          timeout 5 "$QT_BIN/qml" -platform offscreen qt/main.qml -- \
+          QML=$(command -v qml6 || command -v qml || find /usr/lib /usr/libexec -name qml -type f -executable 2>/dev/null | head -1)
+          [ -x "$QML" ] || { echo "qml binary not found"; exit 1; }
+          echo "Using $QML"
+          timeout 5 "$QML" -platform offscreen qt/main.qml -- \
             --design "$PWD/design/qt/${{ matrix.resolution }}" \
             || [ $? -eq 124 ]
 
@@ -62,8 +66,10 @@ jobs:
             qml6-module-qtqml-workerscript
       - name: Smoke run (offscreen)
         run: |
-          QT_BIN=$(qmake6 -query QT_INSTALL_BINS)
-          timeout 5 "$QT_BIN/qml" -platform offscreen qt-nogpu/main.qml -- \
+          QML=$(command -v qml6 || command -v qml || find /usr/lib /usr/libexec -name qml -type f -executable 2>/dev/null | head -1)
+          [ -x "$QML" ] || { echo "qml binary not found"; exit 1; }
+          echo "Using $QML"
+          timeout 5 "$QML" -platform offscreen qt-nogpu/main.qml -- \
             --design "$PWD/design/qt-nogpu/${{ matrix.resolution }}" \
             || [ $? -eq 124 ]
 
