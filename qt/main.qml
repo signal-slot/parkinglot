@@ -55,7 +55,24 @@ Window {
 
             m.goodBye.visible = Qt.binding(() => root.currentPage === 3)
             m.goodBye.clicked.connect(() => { root.currentPage = 0 })
+
+            m.clock.text = root.formatClock()
         }
+    }
+
+    function formatClock() {
+        const d = new Date()
+        const hh = String(d.getHours()).padStart(2, '0')
+        const mm = String(d.getMinutes()).padStart(2, '0')
+        return hh + '：' + mm
+    }
+
+    Timer {
+        running: ui.item !== null
+        interval: 1000
+        repeat: true
+        triggeredOnStart: true
+        onTriggered: ui.item.clock.text = root.formatClock()
     }
 
     width: ui.item ? ui.item.width : 1

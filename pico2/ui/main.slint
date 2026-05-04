@@ -5,6 +5,33 @@ export component Application inherits MainWindow {
 
     property <int> page_index: 0;
 
+    // RP2350 has no battery-backed RTC, so the header clock shows uptime since boot.
+    property <int> hh: 0;
+    property <int> mm: 0;
+    property <int> ss: 0;
+    Timer {
+        interval: 1s;
+        running: true;
+        triggered => {
+            root.ss = root.ss + 1;
+            if (root.ss >= 60) {
+                root.ss = 0;
+                root.mm = root.mm + 1;
+                if (root.mm >= 60) {
+                    root.mm = 0;
+                    root.hh = mod(root.hh + 1, 24);
+                }
+            }
+        }
+    }
+    function pad2(n: int) -> string {
+        if (n < 10) {
+            return "0\{n}";
+        }
+        return "\{n}";
+    }
+    clock-text: pad2(root.hh) + "：" + pad2(root.mm);
+
     function welcome() { root.page_index = 0; }
     function next_page() { root.page_index += 1; }
     
