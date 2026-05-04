@@ -1,0 +1,2 @@
+module Design
+MainWindow 1.0 ../MainWindow.ui.qml

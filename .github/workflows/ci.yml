@@ -31,11 +31,10 @@ jobs:
             qml6-module-qtquick-layouts \
             qml6-module-qtqml-workerscript \
             qml6-module-qt5compat-graphicaleffects
-      - name: Lint generated design QML
-        # Lint only the generated design file. The logic main.qml uses
-        # Loader to bind to widgets dynamically, which qmllint can't
-        # type-check without resolving the source at lint time, so we
-        # skip it.
+      - name: Lint design and logic QML
+        # Lint both the generated design QML and the logic main.qml. main.qml
+        # does `import Design 1.0`; qmllint resolves the module via
+        # -I design/qt/<WxH>/ → Design/qmldir → MainWindow.ui.qml.
         run: |
           QMLLINT=$(command -v qmllint6 || command -v qmllint \
             || find /usr/lib /usr/lib64 -name 'qmllint*' -type f -executable 2>/dev/null | head -1)
@@ -45,6 +44,7 @@ jobs:
           # Qt5Compat.GraphicalEffects on Ubuntu noble's Qt 6.4.2 packaging,
           # which ships the module's plugin but not its plugins.qmltypes.
           "$QMLLINT" --import disable "$PWD/design/qt/${{ matrix.resolution }}/MainWindow.ui.qml"
+          "$QMLLINT" --import disable -I "$PWD/design/qt/${{ matrix.resolution }}" "$PWD/qt/main.qml"
 
   qt-nogpu:
     name: qt-nogpu × ${{ matrix.resolution }}
@@ -66,13 +66,14 @@ jobs:
             qml6-module-qtquick-controls \
             qml6-module-qtquick-layouts \
             qml6-module-qtqml-workerscript
-      - name: Lint generated design QML
+      - name: Lint design and logic QML
         run: |
           QMLLINT=$(command -v qmllint6 || command -v qmllint \
             || find /usr/lib /usr/lib64 -name 'qmllint*' -type f -executable 2>/dev/null | head -1)
           [ -x "$QMLLINT" ] || { echo "qmllint not found"; exit 1; }
           echo "Using $QMLLINT"
           "$QMLLINT" "$PWD/design/qt-nogpu/${{ matrix.resolution }}/MainWindow.ui.qml"
+          "$QMLLINT" -I "$PWD/design/qt-nogpu/${{ matrix.resolution }}" "$PWD/qt-nogpu/main.qml"
 
   slint:
     name: slint × ${{ matrix.resolution }}

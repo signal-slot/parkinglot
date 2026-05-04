@@ -16,7 +16,6 @@ if [ ! -d "$DESIGN" ]; then
 fi
 DESIGN="$(cd "$DESIGN" && pwd)"
 
-# main.qml's Loader resolves --design <abs path> at runtime — no symlinks.
-# `--` separator passes the remaining args to the QML app (Qt.application.arguments)
-# instead of letting qml6 try to load them as additional .qml files.
-exec qml6 "$@" "$DIR/main.qml" -- --design "$DESIGN"
+# main.qml does `import Design 1.0`; -I makes the chosen resolution's
+# design/qt/<WxH>/Design/qmldir resolve as that module — no Loader, no symlinks.
+exec qml6 -I "$DESIGN" "$@" "$DIR/main.qml"
