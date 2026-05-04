@@ -10,13 +10,14 @@
             "width": 800
         },
         "QtQuick": {
+            "artboardToOrigin": false,
             "fontScaleFactor": 0.85,
-            "height": 800,
+            "height": 600,
             "imageScaling": true,
             "makeCompact": false,
             "resolution": null,
             "resolutionIndex": 8,
-            "width": 1280
+            "width": 1024
         }
     },
     "layers": {
@@ -33,14 +34,30 @@
         "147": {
             "id": "cancel",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "トップに戻る",
+            "type": 3,
             "visible": true
         },
         "148": {
             "componentName": "長方形 7",
             "native": 0,
             "type": 1,
+            "visible": true
+        },
+        "149": {
+            "native": 2,
+            "textSource": "English",
+            "type": 3,
+            "visible": true
+        },
+        "151": {
+            "id": "clock",
+            "native": 0,
+            "properties": [
+                "text"
+            ],
+            "type": 0,
             "visible": true
         },
         "152": {
@@ -55,8 +72,9 @@
         "155": {
             "id": "key 1",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "1",
+            "type": 3,
             "visible": true
         },
         "156": {
@@ -68,8 +86,9 @@
         "157": {
             "id": "key 2",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "2",
+            "type": 3,
             "visible": true
         },
         "158": {
@@ -81,8 +100,9 @@
         "159": {
             "id": "key 3",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "3",
+            "type": 3,
             "visible": true
         },
         "160": {
@@ -94,8 +114,9 @@
         "161": {
             "id": "key 4",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "4",
+            "type": 3,
             "visible": true
         },
         "162": {
@@ -107,8 +128,9 @@
         "163": {
             "id": "key 5",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "5",
+            "type": 3,
             "visible": true
         },
         "164": {
@@ -120,8 +142,9 @@
         "165": {
             "id": "key 6",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "6",
+            "type": 3,
             "visible": true
         },
         "166": {
@@ -133,8 +156,9 @@
         "167": {
             "id": "key 7",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "7",
+            "type": 3,
             "visible": true
         },
         "168": {
@@ -146,8 +170,9 @@
         "169": {
             "id": "key 8",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "8",
+            "type": 3,
             "visible": true
         },
         "170": {
@@ -159,8 +184,9 @@
         "171": {
             "id": "key 9",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "9",
+            "type": 3,
             "visible": true
         },
         "172": {
@@ -172,8 +198,9 @@
         "173": {
             "id": "key 0",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "0",
+            "type": 3,
             "visible": true
         },
         "174": {
@@ -185,8 +212,9 @@
         "175": {
             "id": "key c",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 2,
+            "textSource": "クリア",
+            "type": 3,
             "visible": true
         },
         "176": {
@@ -218,8 +246,9 @@
         "184": {
             "id": "accept",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 3,
+            "textSource": "確定　▶",
+            "type": 3,
             "visible": true
         },
         "185": {
@@ -255,8 +284,9 @@
         "203": {
             "id": "cash",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 3,
+            "textSource": "現金",
+            "type": 3,
             "visible": true
         },
         "204": {
@@ -268,8 +298,9 @@
         "205": {
             "id": "card",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 3,
+            "textSource": "クレジットカード",
+            "type": 3,
             "visible": true
         },
         "206": {
@@ -281,8 +312,9 @@
         "207": {
             "id": "ic",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 3,
+            "textSource": "交通系IC",
+            "type": 3,
             "visible": true
         },
         "208": {
@@ -294,8 +326,9 @@
         "209": {
             "id": "pay",
             "interactive": true,
-            "native": 1,
-            "type": 0,
+            "native": 3,
+            "textSource": "電子マネー",
+            "type": 3,
             "visible": true
         },
         "210": {

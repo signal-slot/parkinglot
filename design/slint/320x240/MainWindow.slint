@@ -1,4 +1,6 @@
+import {Button} from "std-widgets.slint";
 export component MainWindow inherits Window {
+    in-out property<string> clock-text: "12：24";
     in-out property<string> digit1-text: "2";
     in-out property<bool> digit1-visible: true;
     in-out property<string> digit10-text: "1";
@@ -193,101 +195,37 @@ export component MainWindow inherits Window {
             x: 83px;
             y: 89px;
         }
-        cash := TouchArea {
+        cash := Button {
             height: 36px;
-            visible: true;
+            primary: true;
+            text: "現金";
             width: 126px;
             x: 30px;
             y: 117px;
-            Rectangle {
-                height: 36px;
-                width: 126px;
-                x: cash.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(180.000deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #3b202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 35px;
-                    width: 125px;
-                    x: 1px;
-                    y: 0px;
-                }
-            }
         }
-        card := TouchArea {
+        card := Button {
             height: 36px;
-            visible: true;
+            primary: true;
+            text: "クレジットカード";
             width: 126px;
             x: 163px;
             y: 117px;
-            Rectangle {
-                height: 36px;
-                width: 126px;
-                x: card.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(180.000deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #3b202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 35px;
-                    width: 125px;
-                    x: 1px;
-                    y: 0px;
-                }
-            }
         }
-        ic := TouchArea {
+        ic := Button {
             height: 36px;
-            visible: true;
+            primary: true;
+            text: "交通系IC";
             width: 126px;
             x: 30px;
             y: 160px;
-            Rectangle {
-                height: 36px;
-                width: 126px;
-                x: ic.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(180.000deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #3b202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 35px;
-                    width: 125px;
-                    x: 1px;
-                    y: 0px;
-                }
-            }
         }
-        pay := TouchArea {
+        pay := Button {
             height: 36px;
-            visible: true;
+            primary: true;
+            text: "電子マネー";
             width: 126px;
             x: 163px;
             y: 160px;
-            Rectangle {
-                height: 36px;
-                width: 126px;
-                x: pay.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(180.000deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #3b202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 35px;
-                    width: 125px;
-                    x: 1px;
-                    y: 0px;
-                }
-            }
         }
         Text {
             color: #000000;
@@ -320,280 +258,82 @@ export component MainWindow inherits Window {
             x: 52px;
             y: 45px;
         }
-        key-1 := TouchArea {
+        key-1 := Button {
             height: 20px;
-            visible: true;
+            text: "1";
             width: 35px;
             x: 172px;
             y: 82px;
-            Rectangle {
-                height: 20px;
-                width: 35px;
-                x: key-1.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 0px;
-                    y: 1px;
-                }
-            }
         }
-        key-2 := TouchArea {
+        key-2 := Button {
             height: 20px;
-            visible: true;
+            text: "2";
             width: 35px;
             x: 212px;
             y: 82px;
-            Rectangle {
-                height: 20px;
-                width: 35px;
-                x: key-2.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 1px;
-                    y: 1px;
-                }
-            }
         }
-        key-3 := TouchArea {
+        key-3 := Button {
             height: 20px;
-            visible: true;
+            text: "3";
             width: 35px;
             x: 253px;
             y: 82px;
-            Rectangle {
-                height: 20px;
-                width: 35px;
-                x: key-3.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 0px;
-                    y: 1px;
-                }
-            }
         }
-        key-4 := TouchArea {
+        key-4 := Button {
             height: 20px;
-            visible: true;
+            text: "4";
             width: 35px;
             x: 172px;
             y: 106px;
-            Rectangle {
-                height: 20px;
-                width: 35px;
-                x: key-4.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 0px;
-                    y: 1px;
-                }
-            }
         }
-        key-5 := TouchArea {
+        key-5 := Button {
             height: 20px;
-            visible: true;
+            text: "5";
             width: 35px;
             x: 212px;
             y: 106px;
-            Rectangle {
-                height: 20px;
-                width: 35px;
-                x: key-5.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 1px;
-                    y: 1px;
-                }
-            }
         }
-        key-6 := TouchArea {
+        key-6 := Button {
             height: 20px;
-            visible: true;
+            text: "6";
             width: 35px;
             x: 253px;
             y: 106px;
-            Rectangle {
-                height: 20px;
-                width: 35px;
-                x: key-6.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 0px;
-                    y: 1px;
-                }
-            }
         }
-        key-7 := TouchArea {
+        key-7 := Button {
             height: 19px;
-            visible: true;
+            text: "7";
             width: 35px;
             x: 172px;
             y: 132px;
-            Rectangle {
-                height: 19px;
-                width: 35px;
-                x: key-7.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 0px;
-                    y: 0px;
-                }
-            }
         }
-        key-8 := TouchArea {
+        key-8 := Button {
             height: 19px;
-            visible: true;
+            text: "8";
             width: 35px;
             x: 212px;
             y: 132px;
-            Rectangle {
-                height: 19px;
-                width: 35px;
-                x: key-8.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 1px;
-                    y: 0px;
-                }
-            }
         }
-        key-9 := TouchArea {
+        key-9 := Button {
             height: 19px;
-            visible: true;
+            text: "9";
             width: 35px;
             x: 253px;
             y: 132px;
-            Rectangle {
-                height: 19px;
-                width: 35px;
-                x: key-9.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 0px;
-                    y: 0px;
-                }
-            }
         }
-        key-0 := TouchArea {
+        key-0 := Button {
             height: 20px;
-            visible: true;
+            text: "0";
             width: 35px;
             x: 212px;
             y: 156px;
-            Rectangle {
-                height: 20px;
-                width: 35px;
-                x: key-0.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 1px;
-                    y: 1px;
-                }
-            }
         }
-        key-c := TouchArea {
+        key-c := Button {
             height: 20px;
-            visible: true;
+            text: "クリア";
             width: 35px;
             x: 253px;
             y: 156px;
-            Rectangle {
-                height: 20px;
-                width: 35px;
-                x: key-c.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(0.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #52202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 34px;
-                    x: 0px;
-                    y: 1px;
-                }
-            }
         }
         Rectangle {
             height: 93px;
@@ -679,29 +419,13 @@ export component MainWindow inherits Window {
             x: 115px;
             y: 114px;
         }
-        accept := TouchArea {
+        accept := Button {
             height: 20px;
-            visible: true;
+            primary: true;
+            text: "確定▶";
             width: 143px;
             x: 17px;
             y: 184px;
-            Rectangle {
-                height: 20px;
-                width: 143px;
-                x: accept.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(180.000deg, #ffeec1 0%, #ffbb04 33.4717%, #e98900 99.4385%);
-                    drop-shadow-blur: 6px;
-                    drop-shadow-color: #3b202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 142px;
-                    x: 0px;
-                    y: 1px;
-                }
-            }
         }
     }
     header := Rectangle {
@@ -721,48 +445,19 @@ export component MainWindow inherits Window {
                 y: 0px;
             }
         }
-        cancel := TouchArea {
+        cancel := Button {
             height: 20px;
-            visible: true;
+            text: "トップに戻る";
             width: 51px;
             x: 12px;
             y: 5px;
-            Rectangle {
-                height: 20px;
-                width: 51px;
-                x: cancel.pressed ? 2px : 0px;
-                y: self.x;
-                Rectangle {
-                    background: @linear-gradient(360.000deg, #dadada 0%, #ffffff 100%);
-                    border-radius: 2px;
-                    drop-shadow-blur: 10px;
-                    drop-shadow-color: #a6202020;
-                    drop-shadow-offset-x: 3px;
-                    drop-shadow-offset-y: 3px;
-                    height: 18px;
-                    width: 50px;
-                    x: 0px;
-                    y: 1px;
-                }
-            }
         }
-        Rectangle {
+        Button {
             height: 20px;
+            text: "English";
             width: 51px;
             x: 256px;
             y: 5px;
-            Rectangle {
-                background: @linear-gradient(360.000deg, #dadada 0%, #ffffff 100%);
-                border-radius: 2px;
-                drop-shadow-blur: 10px;
-                drop-shadow-color: #a6202020;
-                drop-shadow-offset-x: 3px;
-                drop-shadow-offset-y: 3px;
-                height: 18px;
-                width: 50px;
-                x: 1px;
-                y: 1px;
-            }
         }
         Text {
             color: #000000;
@@ -776,15 +471,16 @@ export component MainWindow inherits Window {
             x: 268px;
             y: 10px;
         }
-        Text {
+        clock := Text {
             color: #ffffff;
             font-family: "Source Han Sans";
             font-size: 12px;
             font-weight: 700;
             height: 18px;
             horizontal-alignment: center;
-            text: "12：24";
+            text: root.clock-text;
             vertical-alignment: center;
+            visible: true;
             width: 40px;
             x: 200px;
             y: 6px;
@@ -890,7 +586,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 21px;
                 image-fit: contain;
-                source: @image-url("images/c65caab073f1a0d0.png");
+                source: @image-url("images/c65caab073f1a0d0_1.png");
                 width: 23px;
                 x: 34px;
                 y: 186px;
@@ -922,7 +618,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 11px;
                 image-fit: contain;
-                source: @image-url("images/498ce93ca6ff4e67903ef063d0f0323128da491d.png");
+                source: @image-url("images/498ce93ca6ff4e67903ef063d0f0323128da491d_1.png");
                 width: 17px;
                 x: 126px;
                 y: 204px;
@@ -930,7 +626,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 11px;
                 image-fit: contain;
-                source: @image-url("images/730f0f6b1a881c07b6539bb9b5886d8c8d625807.png");
+                source: @image-url("images/730f0f6b1a881c07b6539bb9b5886d8c8d625807_1.png");
                 width: 15px;
                 x: 106px;
                 y: 204px;
@@ -938,7 +634,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 18px;
                 image-fit: contain;
-                source: @image-url("images/78c7ddb491d416672ef5bb72b2851002798037cd.png");
+                source: @image-url("images/78c7ddb491d416672ef5bb72b2851002798037cd_1.png");
                 width: 18px;
                 x: 84px;
                 y: 201px;
@@ -946,7 +642,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 18px;
                 image-fit: contain;
-                source: @image-url("images/05fb0171bc9c95570a5e46f62b87df372ecfe9d4.png");
+                source: @image-url("images/05fb0171bc9c95570a5e46f62b87df372ecfe9d4_1.png");
                 width: 24px;
                 x: 123px;
                 y: 183px;
@@ -954,7 +650,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 11px;
                 image-fit: contain;
-                source: @image-url("images/logo_Visa_s.png");
+                source: @image-url("images/logo_Visa_s_1.png");
                 width: 22px;
                 x: 82px;
                 y: 186px;
@@ -962,7 +658,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 13px;
                 image-fit: contain;
-                source: @image-url("images/8e29757faf8d84aef5487a00405801fc68e82f7f.png");
+                source: @image-url("images/8e29757faf8d84aef5487a00405801fc68e82f7f_1.png");
                 width: 18px;
                 x: 105px;
                 y: 185px;
@@ -982,7 +678,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 14px;
                 image-fit: contain;
-                source: @image-url("images/suica.png");
+                source: @image-url("images/suica_1.png");
                 width: 20px;
                 x: 180px;
                 y: 181px;
@@ -990,7 +686,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 16px;
                 image-fit: contain;
-                source: @image-url("images/kitaca.png");
+                source: @image-url("images/kitaca_1.png");
                 width: 17px;
                 x: 159px;
                 y: 180px;
@@ -998,7 +694,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 15px;
                 image-fit: contain;
-                source: @image-url("images/pasmo.png");
+                source: @image-url("images/pasmo_1.png");
                 width: 20px;
                 x: 201px;
                 y: 180px;
@@ -1006,7 +702,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 10px;
                 image-fit: contain;
-                source: @image-url("images/toica.png");
+                source: @image-url("images/toica_1.png");
                 width: 20px;
                 x: 157px;
                 y: 195px;
@@ -1014,7 +710,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 9px;
                 image-fit: contain;
-                source: @image-url("images/manaca.png");
+                source: @image-url("images/manaca_1.png");
                 width: 24px;
                 x: 178px;
                 y: 197px;
@@ -1022,7 +718,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 13px;
                 image-fit: contain;
-                source: @image-url("images/icoca.png");
+                source: @image-url("images/icoca_1.png");
                 width: 20px;
                 x: 201px;
                 y: 196px;
@@ -1030,7 +726,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 12px;
                 image-fit: contain;
-                source: @image-url("images/sugoca.png");
+                source: @image-url("images/sugoca_1.png");
                 width: 19px;
                 x: 157px;
                 y: 207px;
@@ -1038,7 +734,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 8px;
                 image-fit: contain;
-                source: @image-url("images/nimoca.png");
+                source: @image-url("images/nimoca_1.png");
                 width: 21px;
                 x: 178px;
                 y: 209px;
@@ -1046,7 +742,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 9px;
                 image-fit: contain;
-                source: @image-url("images/be5725fdd6cd4288.png");
+                source: @image-url("images/be5725fdd6cd4288_1.png");
                 width: 20px;
                 x: 201px;
                 y: 209px;
@@ -1066,7 +762,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 19px;
                 image-fit: contain;
-                source: @image-url("images/7c3a9aed3242d4cef15d5cece6939b528aa659c8.png");
+                source: @image-url("images/7c3a9aed3242d4cef15d5cece6939b528aa659c8_1.png");
                 width: 26px;
                 x: 274px;
                 y: 191px;
@@ -1074,7 +770,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 13px;
                 image-fit: contain;
-                source: @image-url("images/88b22f4bc2aa84a66895e3451a3ab988af08a648.png");
+                source: @image-url("images/88b22f4bc2aa84a66895e3451a3ab988af08a648_1.png");
                 width: 17px;
                 x: 254px;
                 y: 194px;
@@ -1082,7 +778,7 @@ export component MainWindow inherits Window {
             Image {
                 height: 13px;
                 image-fit: contain;
-                source: @image-url("images/eff4e4d3000699fe98a14af52a191fe59a4d7427.png");
+                source: @image-url("images/eff4e4d3000699fe98a14af52a191fe59a4d7427_1.png");
                 width: 18px;
                 x: 232px;
                 y: 194px;

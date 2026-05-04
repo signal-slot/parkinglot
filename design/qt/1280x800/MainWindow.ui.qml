@@ -1,5 +1,6 @@
 import QtQuick
-import Qt5Compat.GraphicalEffects as GE
+import QtQuick.Controls
+import QtQuick.Effects
 
 Item {
     height: 800
@@ -9,6 +10,7 @@ Item {
     property alias cancel: cancel
     property alias card: card
     property alias cash: cash
+    property alias clock: clock
     property alias digit1: digit1
     property alias digit10: digit10
     property alias footer: footer
@@ -71,7 +73,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 57
+                font.pixelSize: 48
                 height: 82.6667
                 horizontalAlignment: Text.AlignHCenter
                 text: "ご利用ありがとうございました"
@@ -97,7 +99,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 39
+                font.pixelSize: 33
                 height: 112
                 horizontalAlignment: Text.AlignHCenter
                 text: "精算後5分で再びロック板が上がりますので\n５分以内に出庫してください"
@@ -131,7 +133,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 47
+                font.pixelSize: 40
                 height: 68
                 horizontalAlignment: Text.AlignLeft
                 text: "料金は"
@@ -145,7 +147,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 66
+                font.pixelSize: 56
                 height: 94.6667
                 horizontalAlignment: Text.AlignLeft
                 text: "200"
@@ -158,7 +160,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 36
+                font.pixelSize: 31
                 height: 52
                 horizontalAlignment: Text.AlignLeft
                 text: "円"
@@ -171,7 +173,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 47
+                font.pixelSize: 40
                 height: 68
                 horizontalAlignment: Text.AlignLeft
                 text: "です"
@@ -185,7 +187,7 @@ Item {
             color: "#ff000000"
             font.bold: true
             font.family: "Source Han Sans"
-            font.pixelSize: 37
+            font.pixelSize: 32
             height: 53.3333
             horizontalAlignment: Text.AlignLeft
             text: "お支払方法をお選びください"
@@ -196,145 +198,93 @@ Item {
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: cash
+                font.family: "Source Han Sans"
+                font.pixelSize: 39
                 height: 121.333
+                highlighted: true
+                layer.enabled: true
+                text: "現金"
                 width: 504
                 x: 121.6
                 y: 390.667
-                Rectangle {
-                    height: 121.333
-                    layer.enabled: true
-                    width: 504
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#3b202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#3b202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.229999
+                    shadowVerticalOffset: 3.49898
                 }
             }
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: card
+                font.family: "Source Han Sans"
+                font.pixelSize: 39
                 height: 121.333
+                highlighted: true
+                layer.enabled: true
+                text: "クレジットカード"
                 width: 504
                 x: 652.8
                 y: 390.667
-                Rectangle {
-                    height: 121.333
-                    layer.enabled: true
-                    width: 504
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#3b202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#3b202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.229999
+                    shadowVerticalOffset: 3.49898
                 }
             }
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: ic
+                font.family: "Source Han Sans"
+                font.pixelSize: 39
                 height: 121.333
+                highlighted: true
+                layer.enabled: true
+                text: "交通系IC"
                 width: 504
                 x: 121.6
                 y: 534.667
-                Rectangle {
-                    height: 121.333
-                    layer.enabled: true
-                    width: 504
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#3b202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#3b202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.229999
+                    shadowVerticalOffset: 3.49898
                 }
             }
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: pay
+                font.family: "Source Han Sans"
+                font.pixelSize: 39
                 height: 121.333
+                highlighted: true
+                layer.enabled: true
+                text: "電子マネー"
                 width: 504
                 x: 652.8
                 y: 534.667
-                Rectangle {
-                    height: 121.333
-                    layer.enabled: true
-                    width: 504
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#3b202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#3b202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.229999
+                    shadowVerticalOffset: 3.49898
                 }
             }
         }
@@ -342,7 +292,7 @@ Item {
             color: "#ff000000"
             font.bold: true
             font.family: "Source Han Sans"
-            font.pixelSize: 33
+            font.pixelSize: 28
             height: 48
             horizontalAlignment: Text.AlignLeft
             text: "サービス券は先に入れてください"
@@ -360,7 +310,7 @@ Item {
             color: "#ff000000"
             font.bold: true
             font.family: "Source Han Sans"
-            font.pixelSize: 47
+            font.pixelSize: 40
             height: 68
             horizontalAlignment: Text.AlignHCenter
             text: "駐車位置番号を入力してください"
@@ -371,400 +321,224 @@ Item {
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: key1
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 66.6667
+                highlighted: false
+                layer.enabled: true
+                text: "1"
                 width: 140.8
                 x: 689.6
                 y: 272
-                Item {
-                    height: 66.6667
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3334
-                        radius: 7.99999
-                        width: 136
-                        x: 1.60003
-                        y: 2.66664
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key2
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 66.6667
+                highlighted: false
+                layer.enabled: true
+                text: "2"
                 width: 140.8
                 x: 849.6
                 y: 272
-                Item {
-                    height: 66.6667
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3334
-                        radius: 7.99999
-                        width: 136
-                        x: 3.19999
-                        y: 2.66664
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key3
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 66.6667
+                highlighted: false
+                layer.enabled: true
+                text: "3"
                 width: 140.8
                 x: 1012.8
                 y: 272
-                Item {
-                    height: 66.6667
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3334
-                        radius: 7.99999
-                        width: 136
-                        x: 1.60002
-                        y: 2.66664
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key4
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 65.3333
+                highlighted: false
+                layer.enabled: true
+                text: "4"
                 width: 140.8
                 x: 689.6
                 y: 354.667
-                Item {
-                    height: 65.3333
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3333
-                        radius: 7.99999
-                        width: 136
-                        x: 1.60003
-                        y: 2.66666
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key5
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 65.3333
+                highlighted: false
+                layer.enabled: true
+                text: "5"
                 width: 140.8
                 x: 849.6
                 y: 354.667
-                Item {
-                    height: 65.3333
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3333
-                        radius: 7.99999
-                        width: 136
-                        x: 3.19999
-                        y: 2.66666
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key6
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 65.3333
+                highlighted: false
+                layer.enabled: true
+                text: "6"
                 width: 140.8
                 x: 1012.8
                 y: 354.667
-                Item {
-                    height: 65.3333
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3333
-                        radius: 7.99999
-                        width: 136
-                        x: 1.60002
-                        y: 2.66666
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key7
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 64
+                highlighted: false
+                layer.enabled: true
+                text: "7"
                 width: 140.8
                 x: 689.6
                 y: 438.667
-                Item {
-                    height: 64
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3333
-                        radius: 7.99999
-                        width: 136
-                        x: 1.60003
-                        y: 1.33334
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key8
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 64
+                highlighted: false
+                layer.enabled: true
+                text: "8"
                 width: 140.8
                 x: 849.6
                 y: 438.667
-                Item {
-                    height: 64
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3333
-                        radius: 7.99999
-                        width: 136
-                        x: 3.19999
-                        y: 1.33334
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key9
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 64
+                highlighted: false
+                layer.enabled: true
+                text: "9"
                 width: 140.8
                 x: 1012.8
                 y: 438.667
-                Item {
-                    height: 64
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3333
-                        radius: 7.99999
-                        width: 136
-                        x: 1.60002
-                        y: 1.33334
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: key0
+                font.family: "Source Han Sans"
+                font.pixelSize: 19
                 height: 66.6667
+                highlighted: false
+                layer.enabled: true
+                text: "0"
                 width: 140.8
                 x: 849.6
                 y: 520
-                Item {
-                    height: 66.6667
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3334
-                        radius: 7.99999
-                        width: 136
-                        x: 3.19999
-                        y: 2.66665
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
-            MouseArea {
+            Button {
                 id: keyC
+                font.family: "Source Han Sans"
+                font.pixelSize: 16
                 height: 66.6667
+                highlighted: false
+                layer.enabled: true
+                text: "クリア"
                 width: 140.8
                 x: 1012.8
                 y: 520
-                Item {
-                    height: 66.6667
-                    layer.enabled: true
-                    width: 140.8
-                    Rectangle {
-                        height: 61.3334
-                        radius: 7.99999
-                        width: 136
-                        x: 1.60002
-                        y: 2.66665
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#52202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#52202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.319997
+                    shadowVerticalOffset: 3.49898
                 }
             }
         }
@@ -789,7 +563,7 @@ Item {
             Text {
                 color: "#ff000000"
                 font.family: "Source Han Sans"
-                font.pixelSize: 32
+                font.pixelSize: 27
                 font.weight: 500
                 height: 46.6667
                 horizontalAlignment: Text.AlignHCenter
@@ -818,7 +592,7 @@ Item {
                 id: digit10
                 color: "#ff000000"
                 font.family: "Source Han Sans"
-                font.pixelSize: 61
+                font.pixelSize: 52
                 font.weight: 500
                 height: 88
                 horizontalAlignment: Text.AlignHCenter
@@ -847,7 +621,7 @@ Item {
                 id: digit1
                 color: "#ff000000"
                 font.family: "Source Han Sans"
-                font.pixelSize: 61
+                font.pixelSize: 52
                 font.weight: 500
                 height: 88
                 horizontalAlignment: Text.AlignHCenter
@@ -860,37 +634,24 @@ Item {
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: accept
+                font.family: "Source Han Sans"
+                font.pixelSize: 25
                 height: 66.6667
+                highlighted: true
+                layer.enabled: true
+                text: "確定　▶"
                 width: 572.8
                 x: 68.8
                 y: 612
-                Rectangle {
-                    height: 66.6667
-                    layer.enabled: true
-                    width: 572.8
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                    layer.effect: GE.DropShadow {
-                        color: "#3b202020"
-                        horizontalOffset: -4.02512
-                        radius: 8
-                        spread: 0.0133333
-                        verticalOffset: 3.49898
-                    }
+                layer.effect: MultiEffect {
+                    shadowBlur: 8
+                    shadowColor: "#3b202020"
+                    shadowEnabled: true
+                    shadowHorizontalOffset: -4.02512
+                    shadowOpacity: 0.229999
+                    shadowVerticalOffset: 3.49898
                 }
             }
         }
@@ -912,77 +673,49 @@ Item {
                 y: 1.33334
             }
         }
-        MouseArea {
+        Button {
             id: cancel
+            font.family: "Source Han Sans"
+            font.pixelSize: 19
             height: 66.6667
+            highlighted: false
+            layer.enabled: true
+            text: "トップに戻る"
             width: 204.8
             x: 49.6
             y: 17.3333
-            Item {
-                height: 66.6667
-                layer.enabled: true
-                width: 204.8
-                Rectangle {
-                    height: 61.3334
-                    radius: 7.99999
-                    width: 200
-                    x: 1.60003
-                    y: 2.66665
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffdadada"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffffff"
-                            position: 1
-                        }
-                    }
-                }
-                layer.effect: GE.DropShadow {
-                    color: "#a6202020"
-                    horizontalOffset: -4.02512
-                    radius: 13.3333
-                    spread: 0.0133333
-                    verticalOffset: 3.49898
-                }
+            layer.effect: MultiEffect {
+                shadowBlur: 13.3333
+                shadowColor: "#a6202020"
+                shadowEnabled: true
+                shadowHorizontalOffset: -4.02512
+                shadowOpacity: 0.650004
+                shadowVerticalOffset: 3.49898
             }
         }
-        Item {
+        Button {
+            font.family: "Source Han Sans"
+            font.pixelSize: 19
             height: 66.6667
+            highlighted: false
             layer.enabled: true
+            text: "English"
             width: 204.8
             x: 1025.6
             y: 17.3333
-            Rectangle {
-                height: 61.3334
-                radius: 7.99999
-                width: 200
-                x: 3.19997
-                y: 2.66665
-                gradient: Gradient {
-                    GradientStop {
-                        color: "#ffdadada"
-                        position: 0
-                    }
-                    GradientStop {
-                        color: "#ffffffff"
-                        position: 1
-                    }
-                }
-            }
-            layer.effect: GE.DropShadow {
-                color: "#a6202020"
-                horizontalOffset: -4.02512
-                radius: 13.3333
-                spread: 0.0133333
-                verticalOffset: 3.49898
+            layer.effect: MultiEffect {
+                shadowBlur: 13.3333
+                shadowColor: "#a6202020"
+                shadowEnabled: true
+                shadowHorizontalOffset: -4.02512
+                shadowOpacity: 0.650004
+                shadowVerticalOffset: 3.49898
             }
         }
         Text {
             color: "#ff000000"
             font.family: "Source Han Sans"
-            font.pixelSize: 22
+            font.pixelSize: 19
             font.weight: 500
             height: 33.3333
             horizontalAlignment: Text.AlignHCenter
@@ -993,10 +726,11 @@ Item {
             y: 32
         }
         Text {
+            id: clock
             color: "#ffffffff"
             font.bold: true
             font.family: "Source Han Sans"
-            font.pixelSize: 40
+            font.pixelSize: 34
             height: 58.6667
             horizontalAlignment: Text.AlignHCenter
             text: "12：24"
@@ -1029,7 +763,7 @@ Item {
                 Text {
                     color: "#ffffffff"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 140
+                    font.pixelSize: 119
                     font.weight: 500
                     height: 202.667
                     horizontalAlignment: Text.AlignHCenter
@@ -1046,7 +780,7 @@ Item {
                     color: "#ff000000"
                     font.bold: true
                     font.family: "Source Han Sans"
-                    font.pixelSize: 57
+                    font.pixelSize: 48
                     height: 82.6667
                     horizontalAlignment: Text.AlignHCenter
                     text: "画面を指でタップしてください"
@@ -1058,7 +792,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 33
+                    font.pixelSize: 28
                     font.weight: 500
                     height: 48
                     horizontalAlignment: Text.AlignHCenter
@@ -1088,7 +822,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 23
+                    font.pixelSize: 19
                     font.weight: 500
                     height: 33.3333
                     horizontalAlignment: Text.AlignHCenter
@@ -1128,7 +862,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 19
+                    font.pixelSize: 16
                     font.weight: 500
                     height: 26.6667
                     horizontalAlignment: Text.AlignHCenter
@@ -1141,7 +875,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 16
+                    font.pixelSize: 14
                     font.weight: 500
                     height: 22.6667
                     horizontalAlignment: Text.AlignHCenter
@@ -1208,7 +942,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 19
+                    font.pixelSize: 16
                     font.weight: 500
                     height: 26.6667
                     horizontalAlignment: Text.AlignHCenter
@@ -1296,7 +1030,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 19
+                    font.pixelSize: 16
                     font.weight: 500
                     height: 26.6667
                     horizontalAlignment: Text.AlignHCenter
@@ -1339,7 +1073,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 19
+                    font.pixelSize: 16
                     font.weight: 500
                     height: 26.6667
                     horizontalAlignment: Text.AlignHCenter

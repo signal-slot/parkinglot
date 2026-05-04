@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 
 Item {
     height: 1080
@@ -8,6 +9,7 @@ Item {
     property alias cancel: cancel
     property alias card: card
     property alias cash: cash
+    property alias clock: clock
     property alias digit1: digit1
     property alias digit10: digit10
     property alias footer: footer
@@ -70,7 +72,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 77
+                font.pixelSize: 65
                 height: 111.6
                 horizontalAlignment: Text.AlignHCenter
                 text: "ご利用ありがとうございました"
@@ -96,7 +98,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 53
+                font.pixelSize: 45
                 height: 151.2
                 horizontalAlignment: Text.AlignHCenter
                 text: "精算後5分で再びロック板が上がりますので\n５分以内に出庫してください"
@@ -130,7 +132,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 63
+                font.pixelSize: 54
                 height: 91.8
                 horizontalAlignment: Text.AlignLeft
                 text: "料金は"
@@ -144,7 +146,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 89
+                font.pixelSize: 75
                 height: 127.8
                 horizontalAlignment: Text.AlignLeft
                 text: "200"
@@ -157,7 +159,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 49
+                font.pixelSize: 41
                 height: 70.2
                 horizontalAlignment: Text.AlignLeft
                 text: "円"
@@ -170,7 +172,7 @@ Item {
                 color: "#ff000000"
                 font.bold: true
                 font.family: "Source Han Sans"
-                font.pixelSize: 63
+                font.pixelSize: 54
                 height: 91.8
                 horizontalAlignment: Text.AlignLeft
                 text: "です"
@@ -184,7 +186,7 @@ Item {
             color: "#ff000000"
             font.bold: true
             font.family: "Source Han Sans"
-            font.pixelSize: 50
+            font.pixelSize: 43
             height: 72
             horizontalAlignment: Text.AlignLeft
             text: "お支払方法をお選びください"
@@ -195,121 +197,65 @@ Item {
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: cash
+                font.family: "Source Han Sans"
+                font.pixelSize: 52
                 height: 163.8
+                highlighted: true
+                text: "現金"
                 width: 756
                 x: 182.4
                 y: 527.4
-                Rectangle {
-                    height: 163.8
-                    width: 756
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                }
             }
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: card
+                font.family: "Source Han Sans"
+                font.pixelSize: 52
                 height: 163.8
+                highlighted: true
+                text: "クレジットカード"
                 width: 756
                 x: 979.2
                 y: 527.4
-                Rectangle {
-                    height: 163.8
-                    width: 756
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                }
             }
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: ic
+                font.family: "Source Han Sans"
+                font.pixelSize: 52
                 height: 163.8
+                highlighted: true
+                text: "交通系IC"
                 width: 756
                 x: 182.4
                 y: 721.8
-                Rectangle {
-                    height: 163.8
-                    width: 756
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                }
             }
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: pay
+                font.family: "Source Han Sans"
+                font.pixelSize: 52
                 height: 163.8
+                highlighted: true
+                text: "電子マネー"
                 width: 756
                 x: 979.2
                 y: 721.8
-                Rectangle {
-                    height: 163.8
-                    width: 756
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                }
             }
         }
         Text {
             color: "#ff000000"
             font.bold: true
             font.family: "Source Han Sans"
-            font.pixelSize: 45
+            font.pixelSize: 38
             height: 64.8
             horizontalAlignment: Text.AlignLeft
             text: "サービス券は先に入れてください"
@@ -327,7 +273,7 @@ Item {
             color: "#ff000000"
             font.bold: true
             font.family: "Source Han Sans"
-            font.pixelSize: 63
+            font.pixelSize: 54
             height: 91.8
             horizontalAlignment: Text.AlignHCenter
             text: "駐車位置番号を入力してください"
@@ -338,313 +284,126 @@ Item {
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: key1
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 90
+                highlighted: false
+                text: "1"
                 width: 211.2
                 x: 1034.4
                 y: 367.2
-                Item {
-                    height: 90
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 2.40004
-                        y: 3.59997
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key2
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 90
+                highlighted: false
+                text: "2"
                 width: 211.2
                 x: 1274.4
                 y: 367.2
-                Item {
-                    height: 90
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 4.79998
-                        y: 3.59997
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key3
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 90
+                highlighted: false
+                text: "3"
                 width: 211.2
                 x: 1519.2
                 y: 367.2
-                Item {
-                    height: 90
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 2.40004
-                        y: 3.59997
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key4
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 88.2
+                highlighted: false
+                text: "4"
                 width: 211.2
                 x: 1034.4
                 y: 478.8
-                Item {
-                    height: 88.2
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 2.40004
-                        y: 3.59999
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key5
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 88.2
+                highlighted: false
+                text: "5"
                 width: 211.2
                 x: 1274.4
                 y: 478.8
-                Item {
-                    height: 88.2
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 4.79998
-                        y: 3.59999
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key6
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 88.2
+                highlighted: false
+                text: "6"
                 width: 211.2
                 x: 1519.2
                 y: 478.8
-                Item {
-                    height: 88.2
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 2.40004
-                        y: 3.59999
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key7
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 86.4
+                highlighted: false
+                text: "7"
                 width: 211.2
                 x: 1034.4
                 y: 592.2
-                Item {
-                    height: 86.4
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 2.40004
-                        y: 1.80001
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key8
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 86.4
+                highlighted: false
+                text: "8"
                 width: 211.2
                 x: 1274.4
                 y: 592.2
-                Item {
-                    height: 86.4
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 4.79998
-                        y: 1.80001
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key9
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 86.4
+                highlighted: false
+                text: "9"
                 width: 211.2
                 x: 1519.2
                 y: 592.2
-                Item {
-                    height: 86.4
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 2.40004
-                        y: 1.80001
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: key0
+                font.family: "Source Han Sans"
+                font.pixelSize: 26
                 height: 90
+                highlighted: false
+                text: "0"
                 width: 211.2
                 x: 1274.4
                 y: 702
-                Item {
-                    height: 90
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 4.79998
-                        y: 3.59997
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
-            MouseArea {
+            Button {
                 id: keyC
+                font.family: "Source Han Sans"
+                font.pixelSize: 21
                 height: 90
+                highlighted: false
+                text: "クリア"
                 width: 211.2
                 x: 1519.2
                 y: 702
-                Item {
-                    height: 90
-                    width: 211.2
-                    Rectangle {
-                        height: 82.8
-                        radius: 10.8
-                        width: 204
-                        x: 2.40004
-                        y: 3.59997
-                        gradient: Gradient {
-                            GradientStop {
-                                color: "#ffdadada"
-                                position: 0
-                            }
-                            GradientStop {
-                                color: "#ffffffff"
-                                position: 1
-                            }
-                        }
-                    }
-                }
             }
         }
         Item {
@@ -668,7 +427,7 @@ Item {
             Text {
                 color: "#ff000000"
                 font.family: "Source Han Sans"
-                font.pixelSize: 43
+                font.pixelSize: 37
                 font.weight: 500
                 height: 63
                 horizontalAlignment: Text.AlignHCenter
@@ -697,7 +456,7 @@ Item {
                 id: digit10
                 color: "#ff000000"
                 font.family: "Source Han Sans"
-                font.pixelSize: 82
+                font.pixelSize: 70
                 font.weight: 500
                 height: 118.8
                 horizontalAlignment: Text.AlignHCenter
@@ -726,7 +485,7 @@ Item {
                 id: digit1
                 color: "#ff000000"
                 font.family: "Source Han Sans"
-                font.pixelSize: 82
+                font.pixelSize: 70
                 font.weight: 500
                 height: 118.8
                 horizontalAlignment: Text.AlignHCenter
@@ -739,30 +498,16 @@ Item {
         }
         Item {
             anchors.fill: parent
-            MouseArea {
+            Button {
                 id: accept
+                font.family: "Source Han Sans"
+                font.pixelSize: 34
                 height: 90
+                highlighted: true
+                text: "確定　▶"
                 width: 859.2
                 x: 103.2
                 y: 826.2
-                Rectangle {
-                    height: 90
-                    width: 859.2
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffffeec1"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffbb04"
-                            position: 0.334717
-                        }
-                        GradientStop {
-                            color: "#ffe98900"
-                            position: 0.994385
-                        }
-                    }
-                }
             }
         }
     }
@@ -783,61 +528,31 @@ Item {
                 y: 1.8
             }
         }
-        MouseArea {
+        Button {
             id: cancel
+            font.family: "Source Han Sans"
+            font.pixelSize: 26
             height: 90
+            highlighted: false
+            text: "トップに戻る"
             width: 307.2
             x: 74.4
             y: 23.4
-            Item {
-                height: 90
-                width: 307.2
-                Rectangle {
-                    height: 82.8
-                    radius: 10.8
-                    width: 300
-                    x: 2.40004
-                    y: 3.59997
-                    gradient: Gradient {
-                        GradientStop {
-                            color: "#ffdadada"
-                            position: 0
-                        }
-                        GradientStop {
-                            color: "#ffffffff"
-                            position: 1
-                        }
-                    }
-                }
-            }
         }
-        Item {
+        Button {
+            font.family: "Source Han Sans"
+            font.pixelSize: 26
             height: 90
+            highlighted: false
+            text: "English"
             width: 307.2
             x: 1538.4
             y: 23.4
-            Rectangle {
-                height: 82.8
-                radius: 10.8
-                width: 300
-                x: 4.79996
-                y: 3.59997
-                gradient: Gradient {
-                    GradientStop {
-                        color: "#ffdadada"
-                        position: 0
-                    }
-                    GradientStop {
-                        color: "#ffffffff"
-                        position: 1
-                    }
-                }
-            }
         }
         Text {
             color: "#ff000000"
             font.family: "Source Han Sans"
-            font.pixelSize: 30
+            font.pixelSize: 26
             font.weight: 500
             height: 45
             horizontalAlignment: Text.AlignHCenter
@@ -848,10 +563,11 @@ Item {
             y: 43.2
         }
         Text {
+            id: clock
             color: "#ffffffff"
             font.bold: true
             font.family: "Source Han Sans"
-            font.pixelSize: 54
+            font.pixelSize: 46
             height: 79.2
             horizontalAlignment: Text.AlignHCenter
             text: "12：24"
@@ -884,7 +600,7 @@ Item {
                 Text {
                     color: "#ffffffff"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 190
+                    font.pixelSize: 161
                     font.weight: 500
                     height: 273.6
                     horizontalAlignment: Text.AlignHCenter
@@ -901,7 +617,7 @@ Item {
                     color: "#ff000000"
                     font.bold: true
                     font.family: "Source Han Sans"
-                    font.pixelSize: 77
+                    font.pixelSize: 65
                     height: 111.6
                     horizontalAlignment: Text.AlignHCenter
                     text: "画面を指でタップしてください"
@@ -913,7 +629,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 45
+                    font.pixelSize: 38
                     font.weight: 500
                     height: 64.8
                     horizontalAlignment: Text.AlignHCenter
@@ -943,7 +659,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 31
+                    font.pixelSize: 26
                     font.weight: 500
                     height: 45
                     horizontalAlignment: Text.AlignHCenter
@@ -983,7 +699,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 25
+                    font.pixelSize: 21
                     font.weight: 500
                     height: 36
                     horizontalAlignment: Text.AlignHCenter
@@ -996,7 +712,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 22
+                    font.pixelSize: 18
                     font.weight: 500
                     height: 30.6
                     horizontalAlignment: Text.AlignHCenter
@@ -1063,7 +779,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 25
+                    font.pixelSize: 21
                     font.weight: 500
                     height: 36
                     horizontalAlignment: Text.AlignHCenter
@@ -1151,7 +867,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 25
+                    font.pixelSize: 21
                     font.weight: 500
                     height: 36
                     horizontalAlignment: Text.AlignHCenter
@@ -1194,7 +910,7 @@ Item {
                 Text {
                     color: "#ff000000"
                     font.family: "Source Han Sans"
-                    font.pixelSize: 25
+                    font.pixelSize: 21
                     font.weight: 500
                     height: 36
                     horizontalAlignment: Text.AlignHCenter
